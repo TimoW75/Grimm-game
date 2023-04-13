@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 202723844}
+  - component: {fileID: 202723845}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -155,6 +156,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &202723845
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202723843}
+  m_Enabled: 1
+  m_SortingLayerID: 1244197843
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &223851477
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,8 +569,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669213300}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1309235639
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!4 &669213302
 Transform:
@@ -701,6 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1000225850}
+  - component: {fileID: 1000225851}
   m_Layer: 0
   m_Name: Midground
   m_TagString: Untagged
@@ -723,6 +736,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1000225851
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000225849}
+  m_Enabled: 1
+  m_SortingLayerID: -1256993215
+  m_SortingLayer: -1
+  m_SortingOrder: 0
 --- !u!1 &1046609828
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307075147}
+  - component: {fileID: 1307075148}
   m_Layer: 0
   m_Name: Background Far
   m_TagString: Untagged
@@ -959,6 +984,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1307075148
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307075146}
+  m_Enabled: 1
+  m_SortingLayerID: 1006759185
+  m_SortingLayer: -3
+  m_SortingOrder: 0
 --- !u!1 &1442650073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906593481}
+  - component: {fileID: 1906593482}
   m_Layer: 0
   m_Name: Background Close
   m_TagString: Untagged
@@ -1109,6 +1146,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1906593482
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906593480}
+  m_Enabled: 1
+  m_SortingLayerID: -120887209
+  m_SortingLayer: -2
+  m_SortingOrder: 0
 --- !u!1 &2024407135
 GameObject:
   m_ObjectHideFlags: 0
