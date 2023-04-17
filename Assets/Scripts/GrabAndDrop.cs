@@ -10,7 +10,7 @@ public class GrabAndDrop : MonoBehaviour
 
     private GameObject grabbedObject;
     private bool isGrabbing = false;
-    private SpriteRenderer spriteRenderer;
+        private SpriteRenderer spriteRenderer;
 
     void Start()
     {

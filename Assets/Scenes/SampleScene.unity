@@ -289,6 +289,7 @@ Transform:
   m_Children:
   - {fileID: 1046609832}
   - {fileID: 2048952297}
+  - {fileID: 571407167}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -697,13 +698,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571407166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.7, y: 0, z: 5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.7, y: 0, z: 0}
   m_LocalScale: {x: 3.8019, y: 3.8019, z: 3.8019}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 669213302}
-  m_RootOrder: 0
+  m_Father: {fileID: 202723844}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &571407168
 Rigidbody2D:
@@ -722,7 +723,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
@@ -954,8 +955,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 16.6, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 571407167}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1355,12 +1355,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046609828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e07eda051432b4eaccb9a46166471f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ceaaf6e81dedeb44b4972870caaa0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDistance: 2
-  objectTag: Objects
   objectOffset: 0.5
+  distance: 2.5
+  smooth: 0
 --- !u!1 &1143974506
 GameObject:
   m_ObjectHideFlags: 0
