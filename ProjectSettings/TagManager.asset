@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Objects
+  - EmptySlot
   layers:
   - Default
   - TransparentFX

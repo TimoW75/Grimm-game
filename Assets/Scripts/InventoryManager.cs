@@ -37,8 +37,10 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (Transform item in inventoryObject)
         {
-            Destroy(item.gameObject);
-
+            if (!item.CompareTag("EmptySlot"))
+            {
+                Destroy(item.gameObject);
+            }
         }
 
         foreach (var item in items) 
