@@ -47,6 +47,7 @@ public class InventoryManager : MonoBehaviour
             var itemIcon = obj.transform.Find("Image").GetComponent<Image>();
             
             itemIcon.sprite = item.itemIcon;
+            itemIcon.preserveAspect = true;
         }
     }
 
