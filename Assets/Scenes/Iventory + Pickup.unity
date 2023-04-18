@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 223851479}
   - component: {fileID: 223851478}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 745832413}
   - component: {fileID: 745832412}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2210,4 +2210,5 @@ MonoBehaviour:
   - aaaa
   - bbbbbb
   - ccccc
+  LieTruth: []
   textSpeed: 0.5

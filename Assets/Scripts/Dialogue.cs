@@ -7,13 +7,15 @@ public class Dialogue : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textComponent;
-    public string[] lines;
+    [SerializeField] private string[] lines;
+    [SerializeField] private string[] LieTruth;
+
     [SerializeField] private float textSpeed;
 
     private int index;
     private bool playerIsClose;
+    private bool hasReceivedClue;
 
-    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
@@ -36,13 +38,21 @@ public class Dialogue : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !hasReceivedClue)
         {
             if (dialoguePanel.activeInHierarchy)
             {
                 NextLine();
             }
+        }else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && hasReceivedClue)
+        {
+            if (dialoguePanel.activeInHierarchy)
+            {
+                zeroText();
+                hasReceivedClue = false;
+            }
         }
+            
 
     }
 
@@ -59,7 +69,7 @@ public class Dialogue : MonoBehaviour
         textComponent.text = lines[index];
     }
 
-  
+
     void NextLine()
     {
         if (index < lines.Length - 1)
@@ -70,7 +80,11 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            zeroText() ;
+            int responseIndex = Random.Range(0, 2);
+            print(responseIndex);
+            textComponent.text = LieTruth[responseIndex];
+            hasReceivedClue = true;
+
         }
     }
 
