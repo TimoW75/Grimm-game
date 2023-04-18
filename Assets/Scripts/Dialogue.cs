@@ -80,11 +80,17 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            int responseIndex = Random.Range(0, 2);
-            print(responseIndex);
-            textComponent.text = LieTruth[responseIndex];
-            hasReceivedClue = true;
-
+            if(LieTruth != null)
+            {
+                int responseIndex = Random.Range(0, 2);
+                print(responseIndex);
+                textComponent.text = LieTruth[responseIndex];
+                hasReceivedClue = true;
+            }
+            else
+            {
+                zeroText();
+            }
         }
     }
 
