@@ -721,37 +721,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5648475432930680125, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
   m_PrefabInstance: {fileID: 1279102312}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &471032143
+--- !u!1 &516847728 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2492165688685322925, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
+  m_PrefabInstance: {fileID: 1279102312}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 471032144}
-  m_Layer: 0
-  m_Name: Drag all
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &471032144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471032143}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8205495, y: 2.8485851, z: -10.399348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1307075147}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +935,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choicePanel: {fileID: 976121993}
   inventory: {fileID: 745832407}
+  Field:
+  - {fileID: 516847728}
+  - {fileID: 1165658737}
+  rightWords:
+  - Book
+  - Potion
   inventoryM: {fileID: 745832412}
 --- !u!212 &574237230
 SpriteRenderer:
@@ -1761,8 +1741,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1307075147}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1165658737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2492165688685322925, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
+  m_PrefabInstance: {fileID: 1329321097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1279102312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1772,7 +1757,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2492165688685322925, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
       propertyPath: m_Name
-      value: IventorySlot
+      value: Field 1
       objectReference: {fileID: 0}
     - target: {fileID: 2492165688685322925, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
       propertyPath: m_TagString
@@ -1905,7 +1890,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 471032144}
   - {fileID: 1143974508}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1930,7 +1914,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2492165688685322925, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
       propertyPath: m_Name
-      value: IventorySlot (1)
+      value: Field 2
       objectReference: {fileID: 0}
     - target: {fileID: 4094941932593172856, guid: 92e592b3f24df89459ac3bfbe6ae30ee, type: 3}
       propertyPath: m_Type
