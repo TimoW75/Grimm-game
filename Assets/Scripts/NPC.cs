@@ -6,6 +6,8 @@ using System.Collections;
 public class NPC : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject choicePannel;
+
     [SerializeField] private TextMeshProUGUI textComponent;
     public string[] lines;
     [SerializeField] private float textSpeed;
@@ -50,8 +52,6 @@ public class NPC : MonoBehaviour
         textComponent.text = lines[index];
     }
 
-
-
     void NextLine()
     {
         if (index < lines.Length - 1)
@@ -70,7 +70,6 @@ public class NPC : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
     }
-
 
     public void zeroText()
     {
