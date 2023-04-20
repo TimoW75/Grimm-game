@@ -8,7 +8,7 @@ public class PlayerMovementV2 : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
-    //Animations state
+    //Animations 
     Animator animator;
     string currentState;
 
