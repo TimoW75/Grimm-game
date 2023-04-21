@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,6 +48,7 @@ public class InventoryManager : MonoBehaviour
             var itemIcon = obj.transform.Find("Image").GetComponent<Image>();
             
             itemIcon.sprite = item.itemIcon;
+            itemIcon.name = item.itemName;
             itemIcon.preserveAspect = true;
         }
     }

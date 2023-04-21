@@ -1,12 +1,16 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
+    [SerializeField] private Sprite npcIcon;
+    [SerializeField] private string NPCname;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textComponent;
+
+    [SerializeField] private Image npcImageObject;
+    [SerializeField] private TextMeshProUGUI npcName;
+
     [SerializeField] private string[] lines;
     [SerializeField] private string[] LieTruth;
 
@@ -65,6 +69,8 @@ public class Dialogue : MonoBehaviour
 
     void StartDialgue()
     {
+        npcImageObject.sprite = npcIcon;
+        npcName.text = NPCname;
         index = 0;
         textComponent.text = lines[index];
     }
@@ -80,11 +86,17 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            int responseIndex = Random.Range(0, 2);
-            print(responseIndex);
-            textComponent.text = LieTruth[responseIndex];
-            hasReceivedClue = true;
-
+            if(LieTruth.Length != 0)
+            {
+                int responseIndex = Random.Range(0, 2);
+                print(responseIndex);
+                textComponent.text = LieTruth[responseIndex];
+                hasReceivedClue = true;
+            }
+            else
+            {
+                zeroText();
+            }
         }
     }
 

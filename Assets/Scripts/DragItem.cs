@@ -18,7 +18,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-        Transform dragParent = transform.root.Find("Inventory");
+        Transform dragParent = transform.root.Find("CanvasMain");
         transform.SetParent(dragParent);
         transform.SetAsLastSibling();
         image.raycastTarget = false;

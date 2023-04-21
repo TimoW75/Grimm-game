@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class ItemManager : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class ItemManager : MonoBehaviour
         inventoryManage.ListItems();
         Destroy(gameObject);
     }
-    private void OnMouseDown()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Pickup();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Pickup();
+        }
     }
 }
