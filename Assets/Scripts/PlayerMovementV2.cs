@@ -13,10 +13,10 @@ public class PlayerMovementV2 : MonoBehaviour
     string currentState;
 
     const string PLAYER_IDLE = "Player_Idle";
-    const string PLAYER_WALK_FRONT = "Player_Walk_Front";
-    const string PLAYER_WALK_BACK = "Player_Walk_Back";
-    const string PLAYER_WALK_LEFT = "Player_Walk_Left";
-    const string PLAYER_WALK_RIGHT = "Player_Walk_Right";
+    const string PLAYER_WALK_FRONT = "Player_Walk_Front_Outside";
+    const string PLAYER_WALK_BACK = "Player_Walk_Back_Outside";
+    const string PLAYER_WALK_LEFT = "Player_Walk_Left_Outside";
+    const string PLAYER_WALK_RIGHT = "Player_Walk_Right_Outside";
 
     void Start()
     {
