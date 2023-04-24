@@ -30,10 +30,10 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private string ItemNeededInInvToCompleteQuestName;
     [SerializeField] private Item givenQuestItem;
-    [SerializeField] private bool questActive;
-    [SerializeField] private bool questCompeleted;
-    [SerializeField] private bool itemReceived;
-    [SerializeField] private bool hasReceivedClue;
+    private bool questActive;
+    private bool questCompeleted;
+    private bool itemReceived;
+    private bool hasReceivedClue;
 
     public InventoryManager inventoryManage;
 
@@ -123,7 +123,8 @@ public class Dialogue : MonoBehaviour
                 SubmitQuestItemSlot.SetActive(true);
                 if(SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
                 {
-                    Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0));
+                    print(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).name);
+                    GameObject.Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).gameObject);    
                 }   
                 textComponent.text = HasQuestItemText[index];
             }

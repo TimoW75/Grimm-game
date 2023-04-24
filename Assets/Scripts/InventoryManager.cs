@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
@@ -50,6 +51,8 @@ public class InventoryManager : MonoBehaviour
             itemIcon.sprite = item.itemIcon;
             itemIcon.name = item.itemName;
             itemIcon.preserveAspect = true;
+            obj.name = item.itemName;
+
         }
     }
 
