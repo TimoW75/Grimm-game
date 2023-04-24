@@ -18,7 +18,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private string[] LieTruth;
     [SerializeField] private string questActiveText;
-    [SerializeField] private string HasQuestItemText;
+    [SerializeField] private string[] HasQuestItemText;
 
     [SerializeField] private float textSpeed;
 
@@ -28,6 +28,7 @@ public class Dialogue : MonoBehaviour
     [Header("NPC Quest")]
     [SerializeField] private bool hasQuest;
     [SerializeField] private string ItemNeededForQuest;
+    [SerializeField] private string ItemNeededInInvToCompleteQuestName;
     [SerializeField] private Item givenQuestItem;
     [SerializeField] private bool questActive;
     [SerializeField] private bool questCompeleted;
@@ -76,9 +77,12 @@ public class Dialogue : MonoBehaviour
                 zeroText();
                 hasReceivedClue = false;
             }
-        }else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && !hasReceivedClue)
+        }else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && !hasReceivedClue && !questCompeleted)
         {
-            zeroText();
+            if (dialoguePanel.activeInHierarchy)
+            {
+                NextLine();
+            }
         }
             
 
@@ -112,12 +116,16 @@ public class Dialogue : MonoBehaviour
             if (inventory != null && SubmitQuestItemSlot != null)
             {
                 inventory.SetActive(true);
+                inventoryManage.ListItems();
             }
             if (SubmitQuestItemSlot != null)
             {
                 SubmitQuestItemSlot.SetActive(true);
-                print(SubmitQuestItemSlot.transform.GetChild(0).name);
-                textComponent.text = HasQuestItemText;
+                if(SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
+                {
+                    Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0));
+                }   
+                textComponent.text = HasQuestItemText[index];
             }
             else
             {
@@ -125,9 +133,9 @@ public class Dialogue : MonoBehaviour
             }
 
         }
-        else if(questCompeleted && !questActive)
+        else if(questCompeleted && questActive && hasReceivedClue)
         {
-            textComponent.text = "I have nothing to say to you";
+            textComponent.text = "You have already completed my quest!";
         }
     }
 
@@ -153,36 +161,64 @@ public class Dialogue : MonoBehaviour
             }
             if (questActive && !questCompeleted)
             {
-                print("test");
-                zeroText();
+                if (SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
+                {
+                    if (SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).name == ItemNeededInInvToCompleteQuestName)
+                    {
+                        if (index < HasQuestItemText.Length - 1)
+                        {
+                            index++;
+                            textComponent.text = string.Empty;
+                            textComponent.text = HasQuestItemText[index];
+                        }
+                        else if(!hasReceivedClue)
+                        {
+                            if (LieTruth.Length != 0)
+                            {
+                                int responseIndex = Random.Range(0, 2);
+                                print(responseIndex);
+                                textComponent.text = LieTruth[responseIndex];
+                                // here the player receives a clue
+                                if (!itemReceived)
+                                {
+                                    InventoryManager.Instance.AddItem(givenQuestItem);
+                                    inventoryManage.ListItems();
+                                    questCompeleted = true;
+                                    itemReceived = true;
+                                    hasReceivedClue = true;
+
+                                }
+                            }
+                            else
+                            {
+                                if (!itemReceived)
+                                {
+                                    InventoryManager.Instance.AddItem(givenQuestItem);
+                                    itemReceived = true;
+                                    questCompeleted = true;
+                                }
+                                else
+                                {
+                                    zeroText();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            zeroText();
+                        }
+                    }
+                    else 
+                    {
+                        textComponent.text = "I have not received the item I asked for yet";
+                    }
+
+                }
             }
             if(questCompeleted && !questActive)
             {
-                if (LieTruth.Length != 0)
-                {
-                    int responseIndex = Random.Range(0, 2);
-                    print(responseIndex);
-                    textComponent.text = LieTruth[responseIndex];
-                    // here the player receives a clue
-                    if (!itemReceived)
-                    {
-                        InventoryManager.Instance.AddItem(givenQuestItem);
-                        inventoryManage.ListItems();
-                        questCompeleted = true;
-                    }
-                }
-                else
-                {
-                    if (!itemReceived)
-                    {
-                        InventoryManager.Instance.AddItem(givenQuestItem);
-                        itemReceived = true;
-                    }
-                    else
-                    {
-                        zeroText();
-                    }
-                }
+                textComponent.text = "You have already completed my quest!";
+
             }
         }
         else
