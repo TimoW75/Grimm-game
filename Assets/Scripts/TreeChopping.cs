@@ -26,9 +26,9 @@ public class TreeChopping : MonoBehaviour {
 
             // Adjust the sprite location of the chopped tree
             sr.transform.localPosition = new Vector3(offsetX, offsetY, sr.transform.localPosition.z);
+            DropItem();
         }
 
-        DropItem();
     }
 
     private void DropItem() {

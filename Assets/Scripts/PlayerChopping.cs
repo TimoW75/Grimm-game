@@ -5,13 +5,19 @@ using UnityEngine;
 public class PlayerChopping : MonoBehaviour {
     public float chopRange = 1f;
     public KeyCode chopKey = KeyCode.Space;
-    public GameObject axe; // Reference to the axe GameObject
+    [SerializeField] public GameObject axe; // Reference to the axe GameObject
     public bool canChop = false;
 
     private TreeChopping treeChopping;
 
     void Start() {
         treeChopping = FindObjectOfType<TreeChopping>();
+        axe.SetActive(false);
+    }
+
+    public void setActiveAxe()
+    {
+        axe.SetActive(true);
     }
 
     void Update() {

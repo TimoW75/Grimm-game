@@ -15,6 +15,7 @@ public class ItemManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Pickup();
+            inventoryManage.ListItems();
         }
     }
 }

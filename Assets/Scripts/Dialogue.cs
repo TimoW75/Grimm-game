@@ -2,9 +2,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
+using Unity.VisualScripting;
 
 public class Dialogue : MonoBehaviour
 {
+    [Header("NPC Dialogue Box")]
     [SerializeField] private Sprite npcIcon;
     [SerializeField] private string NPCname;
     [SerializeField] private GameObject dialoguePanel;
@@ -16,13 +18,16 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private string[] LieTruth;
     [SerializeField] private string questActiveText;
+    [SerializeField] private string HasQuestItemText;
 
     [SerializeField] private float textSpeed;
 
     private int index;
     private bool playerIsClose;
 
+    [Header("NPC Quest")]
     [SerializeField] private bool hasQuest;
+    [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private Item givenQuestItem;
     [SerializeField] private bool questActive;
     [SerializeField] private bool questCompeleted;
@@ -30,6 +35,10 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private bool hasReceivedClue;
 
     public InventoryManager inventoryManage;
+
+    public PlayerChopping playerChop;
+    [SerializeField] private GameObject SubmitQuestItemSlot;
+    [SerializeField] private GameObject inventory;
 
 
     void Start()
@@ -80,6 +89,14 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         index = 0;
         dialoguePanel.SetActive(false);
+        if (SubmitQuestItemSlot != null)
+        {
+            SubmitQuestItemSlot.SetActive(false);
+        }        
+        if (inventory != null)
+        {
+            inventory.SetActive(false);
+        }
     }
 
     void StartDialgue()
@@ -92,7 +109,21 @@ public class Dialogue : MonoBehaviour
             textComponent.text = lines[index];
         }else if(questActive && !questCompeleted)
         {
-            textComponent.text = questActiveText;
+            if (inventory != null && SubmitQuestItemSlot != null)
+            {
+                inventory.SetActive(true);
+            }
+            if (SubmitQuestItemSlot != null)
+            {
+                SubmitQuestItemSlot.SetActive(true);
+                print(SubmitQuestItemSlot.transform.GetChild(0).name);
+                textComponent.text = HasQuestItemText;
+            }
+            else
+            {
+                textComponent.text = questActiveText;
+            }
+
         }
         else if(questCompeleted && !questActive)
         {
@@ -114,10 +145,15 @@ public class Dialogue : MonoBehaviour
             else if(!questActive)
             {
                 questActive = true;
+                if(ItemNeededForQuest == "Axe" && playerChop != null)
+                {
+                    playerChop.setActiveAxe();
+                }
                 zeroText();
             }
             if (questActive && !questCompeleted)
             {
+                print("test");
                 zeroText();
             }
             if(questCompeleted && !questActive)
@@ -199,6 +235,7 @@ public class Dialogue : MonoBehaviour
         {
             playerIsClose = false;
             dialoguePanel.SetActive(false);
+            zeroText();
         }
     }
 }
