@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] private string[] lines;
     [SerializeField] private string[] LieTruth;
-    [SerializeField] private string questActiveText;
+    [SerializeField] private string questActiveText = "You are already doing my quest!";
     [SerializeField] private string[] HasQuestItemText;
 
     [SerializeField] private float textSpeed;
@@ -41,7 +41,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject SubmitQuestItemSlot;
     [SerializeField] private GameObject inventory;
 
-
+    public questManager manageQuests;
     void Start()
     {
         textComponent.text = string.Empty;
@@ -108,9 +108,15 @@ public class Dialogue : MonoBehaviour
         npcImageObject.sprite = npcIcon;
         npcName.text = NPCname;
         index = 0;
-        if(!questActive && !questCompeleted)
+
+        if (manageQuests.questActiveGeneral && !questActive)
+        {
+            textComponent.text = "You are already doing a quest";
+        }
+        if (!questActive && !questCompeleted && !manageQuests.questActiveGeneral)
         {
             textComponent.text = lines[index];
+
         }else if(questActive && !questCompeleted)
         {
             if (inventory != null && SubmitQuestItemSlot != null)
@@ -145,7 +151,8 @@ public class Dialogue : MonoBehaviour
     {
         if (hasQuest)
         {
-            if (index < lines.Length - 1 && !questActive)
+
+            if (index < lines.Length - 1 && !questActive && !manageQuests.questActiveGeneral)
             {
                 index++;
                 textComponent.text = string.Empty;
@@ -154,7 +161,9 @@ public class Dialogue : MonoBehaviour
             else if(!questActive)
             {
                 questActive = true;
-                if(ItemNeededForQuest == "Axe" && playerChop != null)
+                manageQuests.questActiveGeneral = true;
+
+                if (ItemNeededForQuest == "Axe" && playerChop != null)
                 {
                     playerChop.setActiveAxe();
                 }
@@ -189,6 +198,8 @@ public class Dialogue : MonoBehaviour
                                     hasReceivedClue = true;
 
                                 }
+                                manageQuests.questActiveGeneral = false;
+
                             }
                             else
                             {
@@ -202,6 +213,7 @@ public class Dialogue : MonoBehaviour
                                 {
                                     zeroText();
                                 }
+                                manageQuests.questActiveGeneral = false;
                             }
                         }
                         else
@@ -222,7 +234,7 @@ public class Dialogue : MonoBehaviour
 
             }
         }
-        else
+        else if(!hasQuest && !manageQuests.questActiveGeneral)
         {
             if (index < lines.Length - 1)
             {
@@ -246,15 +258,14 @@ public class Dialogue : MonoBehaviour
                         itemReceived = true;
                     }
                     hasReceivedClue = true;
+                    manageQuests.questActiveGeneral = false;
 
                 }
                 else
                 {
                     zeroText();
                 }
-            }
-
-            
+            } 
         }
     }
 

@@ -61,19 +61,19 @@ public class ChoiceNPC : MonoBehaviour
     void checkFilledFields()
     {
         for (int i = 0; i < Field.Length; i++)
-        {
+        {   
             if (Field[i].gameObject.transform.childCount != 0)
             {
-                if (Field[0].gameObject.transform.GetChild(0).name == rightWords[i])
+                if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
                 {
+
                     print("number " + i + " is right");
                 }
                 else
                 {
                     print("number " + i + " is wrong");
                 }
-            } else print("not filled in");
-
+            }
         }
     }
 }
