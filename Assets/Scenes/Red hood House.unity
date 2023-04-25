@@ -270,10 +270,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.8323436}
+  m_Offset: {x: 0, y: 2.372385}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49661297, y: 0.2636403}
+    pivot: {x: 0.50000006, y: 0.2282968}
     oldSize: {x: 6, y: 9.2}
     newSize: {x: 3.6, y: 5.52}
     adaptiveTilingThreshold: 0.5
@@ -281,7 +281,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 5.2462225}
+  m_Size: {x: 6, y: 4.886194}
   m_EdgeRadius: 0
 --- !u!1 &444379552
 GameObject:
@@ -898,10 +898,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.111998975, y: -1.0555487}
+  m_Offset: {x: -0.03398907, y: -0.22864246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4400711, y: 0.20620717}
     oldSize: {x: 1.468387, y: 2.8449998}
     newSize: {x: 1.4431249, y: 2.76505}
     adaptiveTilingThreshold: 0.5
@@ -909,7 +909,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77238214, y: 0.766078}
+  m_Size: {x: 0.92840195, y: 0.7348738}
   m_EdgeRadius: 0
 --- !u!50 &1060192081
 Rigidbody2D:
@@ -1941,7 +1941,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 2.2342715}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49661297, y: 0.2636403}
+    pivot: {x: 0.50000006, y: 0.2282968}
     oldSize: {x: 6, y: 9.2}
     newSize: {x: 3.6, y: 5.52}
     adaptiveTilingThreshold: 0.5
@@ -2384,7 +2384,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 2.234271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49661297, y: 0.2636403}
+    pivot: {x: 0.50000006, y: 0.2282968}
     oldSize: {x: 6, y: 9.2}
     newSize: {x: 3.6, y: 5.52}
     adaptiveTilingThreshold: 0.5
@@ -2493,8 +2493,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02936827, y: 0.92028713}
-  m_Size: {x: 1.5973628, y: 1.5973628}
+  m_Offset: {x: 0.012535529, y: 0.92028713}
+  m_Size: {x: 2.3716593, y: 2.3716593}
   m_Direction: 0
 --- !u!50 &1956163320
 Rigidbody2D:
