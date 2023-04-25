@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wine
   m_EditorClassIdentifier: 
   itemName: Wine
-  itemIcon: {fileID: 21300000, guid: 0289efeb9feff2947b266fed980218d0, type: 3}
+  itemIcon: {fileID: 21300000, guid: a0ac5fdf2de0a1d4fa10f4e576a5e1f0, type: 3}
   isDefaultItem: 0

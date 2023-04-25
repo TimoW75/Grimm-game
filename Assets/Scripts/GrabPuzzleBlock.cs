@@ -23,7 +23,7 @@ public class GrabPuzzleBlock : MonoBehaviour
             lastVertical = vertical;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             if (isCarrying)
             {
