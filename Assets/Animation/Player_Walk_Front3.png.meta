@@ -125,7 +125,7 @@ TextureImporter:
         width: 577.25
         height: 1106
       alignment: 9
-      pivot: {x: 0.4280501, y: 0.22166997}
+      pivot: {x: 0.44074714, y: 0.12668437}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Player_Walk_Front3_1
       rect:
         serializedVersion: 2
-        x: 577
+        x: 575
         y: 0
         width: 577
         height: 1106
       alignment: 9
-      pivot: {x: 0.4576581, y: 0.22166997}
+      pivot: {x: 0.46612665, y: 0.13552023}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,10 +164,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1154
         y: 0
-        width: 577.25
+        width: 577
         height: 1106
       alignment: 9
-      pivot: {x: 0.43651456, y: 0.21946101}
+      pivot: {x: 0.42801872, y: 0.11343058}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 577.25
         height: 1106
       alignment: 9
-      pivot: {x: 0.45767623, y: 0.22166997}
+      pivot: {x: 0.4322822, y: 0.14435609}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
