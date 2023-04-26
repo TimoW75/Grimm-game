@@ -161,8 +161,9 @@ public class SheepController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
-            // Player caught the sheep, perform desired actions here
-            Debug.Log("Player caught the sheep!");
+            
+            Debug.Log("Schaap gevangen");
+            Destroy(gameObject);
         }
     }
 }
