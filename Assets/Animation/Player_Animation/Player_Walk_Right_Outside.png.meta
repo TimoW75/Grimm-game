@@ -120,12 +120,12 @@ TextureImporter:
       name: Player_Walk_Right_Outside_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 510
+        width: 514
         height: 1140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4515928, y: 0.06688318}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Player_Walk_Right_Outside_1
       rect:
         serializedVersion: 2
-        x: 528
+        x: 514
         y: 0
-        width: 505
-        height: 1135
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 514
+        height: 1140
+      alignment: 9
+      pivot: {x: 0.4515928, y: 0.06688318}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Player_Walk_Right_Outside_2
       rect:
         serializedVersion: 2
-        x: 1038
-        y: 1
-        width: 510
-        height: 1139
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1028
+        y: 0
+        width: 514
+        height: 1140
+      alignment: 9
+      pivot: {x: 0.4515928, y: 0.06688318}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,12 +183,12 @@ TextureImporter:
       name: Player_Walk_Right_Outside_3
       rect:
         serializedVersion: 2
-        x: 1547
+        x: 1542
         y: 0
-        width: 508
-        height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 514
+        height: 1140
+      alignment: 9
+      pivot: {x: 0.4515928, y: 0.06688318}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -613,7 +613,23 @@ MonoBehaviour:
   - bbbbbb
   - ccccc
   LieTruth: []
+  questActiveText: You are already doing my quest!
+  HasQuestItemText: []
   textSpeed: 0.5
+  hasQuest: 0
+  ItemNeededForQuest: 
+  ItemNeededInInvToCompleteQuestName: 
+  givenQuestItem: {fileID: 0}
+  questActive: 0
+  questCompeleted: 0
+  itemReceived: 0
+  hasReceivedClue: 0
+  inventoryManage: {fileID: 0}
+  playerChop: {fileID: 0}
+  SubmitQuestItemSlot: {fileID: 0}
+  inventory: {fileID: 0}
+  QuestActiveOnDay: 0
+  gameManager: {fileID: 0}
 --- !u!61 &691489421
 BoxCollider2D:
   m_ObjectHideFlags: 0
