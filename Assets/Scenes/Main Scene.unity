@@ -764,6 +764,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48477620}
     m_Modifications:
+    - target: {fileID: 5478371007715283264, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3863387
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283264, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7450825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283264, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0000013113022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283264, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15177578
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283264, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283265, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: sheepItem
+      value: 
+      objectReference: {fileID: 11400000, guid: e7b4552f19bfe9a4eb8c816fdb978cbf, type: 2}
+    - target: {fileID: 5478371007715283265, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: inventoryManage
+      value: 
+      objectReference: {fileID: 1773913509}
     - target: {fileID: 5478371007715283266, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -811,6 +839,10 @@ PrefabInstance:
     - target: {fileID: 5478371007715283279, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
       propertyPath: m_Name
       value: Sheep
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283279, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: m_TagString
+      value: Olive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
@@ -2328,7 +2360,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0052371025, y: 0.068210006}
+  m_Offset: {x: 0.059360325, y: 0.8433827}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4400711, y: 0.20620717}
@@ -2339,7 +2371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93013287, y: 0.65095544}
+  m_Size: {x: 1.2143621, y: 2.8214376}
   m_EdgeRadius: 0
 --- !u!50 &808150337
 Rigidbody2D:
@@ -15569,7 +15601,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2028440027}
   - {fileID: 7618004518791851584}
   - {fileID: 7618004518839659974}
   - {fileID: 5063389064890694058}
@@ -16798,6 +16829,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48477620}
     m_Modifications:
+    - target: {fileID: 5478371007715283265, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: sheepItem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478371007715283265, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
+      propertyPath: inventoryManage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5478371007715283266, guid: 5c71e23ec449c4003b9cafde63b82293, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17136,12 +17175,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589982322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.9, y: 21.6, z: 0}
+  m_LocalPosition: {x: 51.1, y: 19.2, z: 0}
   m_LocalScale: {x: 5.2338, y: 5.2338, z: 5.2338}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1589982324
 MonoBehaviour:
@@ -17174,10 +17213,30 @@ MonoBehaviour:
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
   lines:
-  - aaaa
-  - bbbbbb
-  - ccccc
-  questActiveText: You are already doing my quest!
+  - Hey there little Re-
+  - Wow you look afwul! did you have a rough night?
+  - You are still trying to figure out where the wolf went and how this could happen?
+  - I have work to do Red.
+  - "You don\u2019t have to help you look exhausted."
+  - N-not in a bad way dear! I swear!
+  - "Okay i\u2019ll accept your help\u2026"
+  - Thanks a lot Red.
+  - Did you eat today you look quite hungry little one.
+  - You can take some carrots from my farm I harvested them this morning!
+  - "Hm? You don\u2019t want any of my carrots but I thought you loved them kid."
+  - "Red sorry I think you should let your investigation be. It\u2019s clear that
+    the wolf is still alive and somehow didn\u2019t die."
+  - There is literally no other explantion on what happend.
+  - "Unless\u2026. It\u2019s nothing\u2026"
+  - "We haven\u2019t seen traces from the wolf since the week of the full moon started
+    right?"
+  - "What if\u2026It\u2019s nothing it sounds silly\u2026"
+  - Why are you pressuring me to talk?
+  - "It\u2019s just I thought there might be a Werewolf around then."
+  - "Don\u2019t raise your voice at me Red."
+  - "\u2026I don\u2019t have anymore clues for you to be honest if you act like this."
+  questActiveText: "\u2026I don\u2019t have anymore clues for you to be honest if
+    you act like this."
   HasQuestItemText: []
   textSpeed: 0.5
   hasQuest: 0
@@ -17188,6 +17247,7 @@ MonoBehaviour:
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
+  QuestActiveOnDay: 3
   gameManager: {fileID: 1744478698}
 --- !u!61 &1589982326
 BoxCollider2D:
@@ -17845,7 +17905,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1840039856
 MonoBehaviour:
@@ -17878,20 +17938,31 @@ MonoBehaviour:
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
   lines:
-  - aaaa
-  - bbbbbb
-  - ccccc
-  questActiveText: You are already doing my quest!
-  HasQuestItemText: []
+  - "\u2026\u2026\u2026"
+  - "Oh, hello little Red sorry dear\u2026 I don\u2019t feel like talking after what
+    happened to my husband\u2026"
+  - "Yes I found him\u2026 but I don\u2019t want to talk about it."
+  questActiveText: "Yes I found him\u2026 but I don\u2019t want to talk about it."
+  HasQuestItemText:
+  - Thanks for your condolences honey.
+  - "You are only trying to help us right? Okay I think i\u2019m ready to talk about
+    it."
+  - "I woke up and my husband wasn\u2019t by my side this morning. I was worried
+    about him and I started to look for him and then I found his body\u2026."
+  - "He said he was going drinking with Lumberjack but he never returned\u2026 and
+    then this terrible thing happened. Maybe if you talk to the lumberjack he could
+    tell you more?"
+  - "\u2026Sorry this is all I can say I don\u2019t want to talk about it anymore."
   textSpeed: 0.5
-  hasQuest: 0
+  hasQuest: 1
   ItemNeededForQuest: 
-  ItemNeededInInvToCompleteQuestName: Wine
+  ItemNeededInInvToCompleteQuestName: Flowers
   givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
+  QuestActiveOnDay: 1
   gameManager: {fileID: 1744478698}
 --- !u!61 &1840039858
 BoxCollider2D:
@@ -18421,90 +18492,6 @@ Transform:
   m_Father: {fileID: 1962517071}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2028440026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2028440027}
-  - component: {fileID: 2028440028}
-  m_Layer: 0
-  m_Name: Mother
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2028440027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028440026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.99, y: 37.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1222687334}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2028440028
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028440026}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6887b4aed32297a42bdd39298e9beb6b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.196, y: 2.3966808}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &2085414637
 GameObject:
   m_ObjectHideFlags: 0
@@ -19639,12 +19626,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5063389064890694057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: -3.5, z: 0}
+  m_LocalPosition: {x: 39, y: -5.5, z: 0}
   m_LocalScale: {x: 5.2338, y: 5.2338, z: 5.2338}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5063389064890694059
 BoxCollider2D:
@@ -19715,9 +19702,42 @@ MonoBehaviour:
   textComponent: {fileID: 1643833486221966908}
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
-  lines: []
-  questActiveText: You are already doing my quest!
-  HasQuestItemText: []
+  lines:
+  - Hmmm
+  - Good day my lovely little Red!
+  - My dear have you been eating? What on earth happend to your clothes?
+  - You should really get a new cloak how did it get like this?
+  - "It\u2019s okay I can try making you a new one if you help me solve my riddle?"
+  - "Oh I see you are not in the mood for my riddles.\u2019"
+  - "You shouldn\u2019t keep worrying about the murder you are only a child let me
+    help you ease your mind."
+  - I only want you to solve a few please do it for me?
+  - Lovely. Here I go then!
+  - I am found on a tree, but I'm not a leaf or a fruit, I can be climbed, but I'm
+    not a trunk or a root. I can be snapped, but I'm not a twig or a leaf, I can
+    give shade, but I'm not a canopy or a sheaf. What am I? Can you bring me what
+    I am talking about.
+  questActiveText: I am found on a tree, but I'm not a leaf or a fruit, I can be
+    climbed, but I'm not a trunk or a root. I can be snapped, but I'm not a twig
+    or a leaf, I can give shade, but I'm not a canopy or a sheaf. What am I? Can
+    you bring me what I am talking about.
+  HasQuestItemText:
+  - I am found on a tree, but I'm not a leaf or a fruit, I can be climbed, but I'm
+    not a trunk or a root. I can be snapped, but I'm not a twig or a leaf, I can
+    give shade, but I'm not a canopy or a sheaf. What am I? Can you bring me what
+    I am talking about.
+  - Good job my dearest.
+  - "Red you know I have been observing you for a while. But you don\u2019t seem
+    to be doing okay and I also see that you are looking different."
+  - May I ask you why you are sneaking around at night these past few days?
+  - I get that you want to investigate as hard as you can but knowing there is a
+    wolf on the lose and still going into the woods at night is dangerous!
+  - "And I thought you didn\u2019t like going into the woods after the incident with
+    your grandmother when u went off the path and almost got eaten."
+  - "What do you mean you weren\u2019t in the woods last night? I saw you."
+  - "You don\u2019t have to glare at me Red I\u2019m just worried about you sweetheart."
+  - ....
+  - "It\u2019s you isn\u2019t it?"
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
@@ -20059,7 +20079,7 @@ MonoBehaviour:
   - "It looks like it, but I\u2019m sure I killed that monster remember when I rescued
     you? I chopped him in half there's no way he could still be alive."
   - It is indeed very strange it does look like a Wolf attacked him.
-  - It is indeed very strange it does look like a Wolf attacked him.
+  - "But I don\u2019t know there is definitely something fishy going on."
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: Axe
@@ -20069,6 +20089,7 @@ MonoBehaviour:
   playerChop: {fileID: 8911966529326209771}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
+  QuestActiveOnDay: 1
   gameManager: {fileID: 1744478698}
 --- !u!212 &7618004518791851582
 SpriteRenderer:
@@ -20161,7 +20182,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20195,20 +20216,35 @@ MonoBehaviour:
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
   lines:
-  - aaaa
-  - bbbbbb
-  - ccccc
-  questActiveText: You are already doing my quest!
-  HasQuestItemText: []
+  - OLIVE!!! GET BACK HERE OLIVE!!!
+  - "Sorry about that Red i\u2019m kind of in the middle of something."
+  - I really need to catch my sheep Olive.
+  - Hm? you would help me catch her? Thanks!
+  questActiveText: Hm? you would help me catch her? Thanks!
+  HasQuestItemText:
+  - Hm? you would help me catch her? Thanks!
+  - Thank you so much little Red! She has been running away a lot recently I wonder
+    why she is so scared.
+  - It must be because of the wolf attack right.
+  - "I do remember seeing the victim write a note before he got killed\u2026"
+  - The note is probably at his house somewhere.
+  - Where I was last night? I was chatting with The farmer looking at the full moon.
+  - "We spoke to you about how we couldn\u2019t believe that the Wolf could be back.
+    And that you shouldn\u2019t be walking around so late at night."
+  - "You don\u2019t remember the chat we had?"
+  - You do seem tired have you been sleeping at all since the incident?
+  - No? Geez Red you should take a break of the investigation if you seem to have
+    hard time remembering stuff with these black outs.
   textSpeed: 0.5
-  hasQuest: 0
+  hasQuest: 1
   ItemNeededForQuest: 
-  ItemNeededInInvToCompleteQuestName: Wine
+  ItemNeededInInvToCompleteQuestName: Sheep
   givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
+  QuestActiveOnDay: 2
   gameManager: {fileID: 1744478698}
 --- !u!212 &7618004518839659970
 SpriteRenderer:
@@ -20312,12 +20348,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7618004518839659975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 79, y: -2.3, z: 0}
+  m_LocalPosition: {x: 93.55, y: -10.6, z: 0}
   m_LocalScale: {x: 5.2338, y: 5.2338, z: 5.2338}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7618004518839659975
 GameObject:
@@ -20390,7 +20426,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7618004518901072844
 MonoBehaviour:
@@ -20416,15 +20452,18 @@ MonoBehaviour:
   - "OOHHH RIIIIGHT someone died last night I think I saw 2 people running around
     earliiier. I\u2019m not entirely suuure who."
   - "I could reallyyy use a drink right noww then we can talk.\u2026"
-  - 
-  - 
   questActiveText: "I could reallyyy use a drink right noww then we can talk.\u2026"
   HasQuestItemText:
+  - "I could reallyyy use a drink right noww then we can talk.\u2026"
   - Thank youuu Red you are so kind.
   - aaahhh that hits the spot.
-  - 
-  - 
-  - 
+  - I was drinking my midnight wine during the full moon yesterday.
+  - I heard some noises coming from the woods but I was too drunk to stand up.
+  - I heard some noises coming from the woods but I was too drunk to stand up.
+  - Maybe you can talk to her.
+  - "That\u2019s all I can remember."
+  - Are you doing okay Red? Are you thirsty or something? I would offer you a sip
+    but not until you are 18!
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
@@ -20434,6 +20473,7 @@ MonoBehaviour:
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
+  QuestActiveOnDay: 2
   gameManager: {fileID: 1744478698}
 --- !u!61 &7618004518901072846
 BoxCollider2D:

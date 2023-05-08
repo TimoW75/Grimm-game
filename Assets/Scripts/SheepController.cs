@@ -9,6 +9,8 @@ public class SheepController : MonoBehaviour
     public float detectionRadius = 5.0f;
     public string playerTag = "Player";
     public float stopChance = 0.1f;
+    [SerializeField] private Item sheepItem;
+    public InventoryManager inventoryManage;
 
     private GameObject player;
     private Rigidbody2D rb;
@@ -156,14 +158,16 @@ public class SheepController : MonoBehaviour
 
         currentState = newState;
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(playerTag))
+        print(gameObject.tag);
+        if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null)
         {
-            
             Debug.Log("Schaap gevangen");
             Destroy(gameObject);
+            InventoryManager.Instance.AddItem(sheepItem);
+
         }
     }
+
 }
