@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a21cccd6da6874170b0f0eb27dfe1c87
+guid: fa338f6d380fb42c79a7c61907345dfb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  alignment: 9
+  spritePivot: {x: 0.48347428, y: 0.3542081}
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,106 +115,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Player_Walk_Front_Outside_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 587.25
-        height: 1138
-      alignment: 9
-      pivot: {x: 0.4400711, y: 0.20620717}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc314b4a06ca4b57aefed23da20561c
-      internalID: -152910189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Walk_Front_Outside_1
-      rect:
-        serializedVersion: 2
-        x: 590
-        y: 0
-        width: 587
-        height: 1138
-      alignment: 9
-      pivot: {x: 0.45289302, y: 0.19958024}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45954e712c1a6472995d0d69051275ae
-      internalID: 1283452859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Walk_Front_Outside_2
-      rect:
-        serializedVersion: 2
-        x: 1171
-        y: 0
-        width: 587
-        height: 1138
-      alignment: 9
-      pivot: {x: 0.47430554, y: 0.19516233}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f4f5633ccffc4e0481ac1524f2c970a
-      internalID: -223385365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Walk_Front_Outside_3
-      rect:
-        serializedVersion: 2
-        x: 1761
-        y: 0
-        width: 587
-        height: 1138
-      alignment: 9
-      pivot: {x: 0.43576357, y: 0.21062519}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0d39bab0668b4d7d89d705d60cb920d
-      internalID: 1642020529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Player_Walk_Front_Outside_0: -152910189
-      Player_Walk_Front_Outside_1: 1283452859
-      Player_Walk_Front_Outside_2: -223385365
-      Player_Walk_Front_Outside_3: 1642020529
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
