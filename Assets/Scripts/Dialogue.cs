@@ -1,8 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
-using Unity.VisualScripting;
+
 
 public class Dialogue : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI npcName;
 
     [SerializeField] private string[] lines;
-    [SerializeField] private string[] LieTruth;
     [SerializeField] private string questActiveText = "You are already doing my quest!";
     [SerializeField] private string[] HasQuestItemText;
 
@@ -30,18 +28,16 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private string ItemNeededInInvToCompleteQuestName;
     [SerializeField] private Item givenQuestItem;
-    [SerializeField] private bool questActive;
-    [SerializeField] private bool questCompeleted;
-    [SerializeField] private bool itemReceived;
-    [SerializeField] private bool hasReceivedClue;
+    private bool questActive;
+    private bool questCompeleted;
+    private bool itemReceived;
+    private bool hasReceivedClue;
 
     public InventoryManager inventoryManage;
 
     public PlayerChopping playerChop;
     [SerializeField] private GameObject SubmitQuestItemSlot;
     [SerializeField] private GameObject inventory;
-
-    [SerializeField] private int QuestActiveOnDay;
 
     public gameManager gameManager;
     void Start()
@@ -85,14 +81,8 @@ public class Dialogue : MonoBehaviour
             {
                 NextLine();
             }
-        }else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && hasReceivedClue && questCompeleted)
-        {
-            if (dialoguePanel.activeInHierarchy)
-            {
-                NextLine();
-            }
         }
-
+            
 
     }
 
@@ -117,57 +107,47 @@ public class Dialogue : MonoBehaviour
         npcName.text = NPCname;
         index = 0;
 
-        if(QuestActiveOnDay == gameManager.dayNumber)
+        if (gameManager.questActiveGeneral && !questActive)
         {
-            if (gameManager.questActiveGeneral && !questActive)
-            {
-                textComponent.text = "You are already doing a quest";
-            }
-            else if (!questActive && !questCompeleted && !gameManager.questActiveGeneral)
-            {
-                textComponent.text = lines[index];
-
-            }
-            else if (questActive && !questCompeleted)
-            {
-                if (inventory != null && SubmitQuestItemSlot != null)
-                {
-                    inventory.SetActive(true);
-                    inventoryManage.ListItems();
-                }
-                if (SubmitQuestItemSlot != null)
-                {
-                    SubmitQuestItemSlot.SetActive(true);
-                    if (SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
-                    {
-                        GameObject.Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).gameObject);
-                    }
-                    textComponent.text = HasQuestItemText[index];
-                }
-                else
-                {
-                    textComponent.text = questActiveText;
-                }
-
-            }
-            else if (questCompeleted && questActive && hasReceivedClue)
-            {
-                textComponent.text = "You have already completed my quest!";
-            }
+            textComponent.text = "You are already doing a quest";
         }
-        else
+        if (!questActive && !questCompeleted && !gameManager.questActiveGeneral)
         {
-            textComponent.text = "Come back tomorrow";
+            textComponent.text = lines[index];
+
+        }else if(questActive && !questCompeleted)
+        {
+            if (inventory != null && SubmitQuestItemSlot != null)
+            {
+                inventory.SetActive(true);
+                inventoryManage.ListItems();
+            }
+            if (SubmitQuestItemSlot != null)
+            {
+                SubmitQuestItemSlot.SetActive(true);
+                if(SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
+                {
+                    print(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).name);
+                    GameObject.Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).gameObject);    
+                }   
+                textComponent.text = HasQuestItemText[index];
+            }
+            else
+            {
+                textComponent.text = questActiveText;
+            }
+
         }
-
-
-
+        else if(questCompeleted && questActive && hasReceivedClue)
+        {
+            textComponent.text = "You have already completed my quest!";
+        }
     }
 
 
     void NextLine()
     {
-        if (hasQuest&& QuestActiveOnDay == gameManager.dayNumber)
+        if (hasQuest)
         {
 
             if (index < lines.Length - 1 && !questActive && !gameManager.questActiveGeneral)
@@ -176,25 +156,18 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = string.Empty;
                 textComponent.text = lines[index];
             }
-            else if (questCompeleted && questActive && itemReceived && hasReceivedClue)
-            {
-                zeroText();
-            }
-            else if(!questActive && !questCompeleted)
+            else if(!questActive)
             {
                 questActive = true;
                 gameManager.questActiveGeneral = true;
-                gameManager.currentQuest = gameObject.name;
-                gameManager.setTextActive();
 
                 if (ItemNeededForQuest == "Axe" && playerChop != null)
                 {
                     playerChop.setActiveAxe();
                 }
                 zeroText();
-
             }
-            else if (questActive && !questCompeleted)
+            if (questActive && !questCompeleted)
             {
                 if (SubmitQuestItemSlot.transform.GetChild(0).transform.childCount != 0)
                 {
@@ -208,40 +181,23 @@ public class Dialogue : MonoBehaviour
                         }
                         else if(!hasReceivedClue)
                         {
-                            if (LieTruth.Length != 0 && !hasReceivedClue)
+                           
+                            if (!itemReceived)
                             {
-                                int responseIndex = Random.Range(0, 2);
-                                textComponent.text = LieTruth[responseIndex];
-                                // here the player receives a clue
-                                if (!itemReceived)
-                                {
-                                    InventoryManager.Instance.AddItem(givenQuestItem);
-                                    inventoryManage.ListItems();
-                                    questCompeleted = true;
-                                    itemReceived = true;
-
-                                }
-                                hasReceivedClue = true;
-                                gameManager.questActiveGeneral = false;
-                                gameManager.currentQuest = string.Empty;
-                                gameManager.setTextHiden();
+                                InventoryManager.Instance.AddItem(givenQuestItem);
+                                itemReceived = true;
+                                questCompeleted = true;
                             }
                             else
                             {
-                                if (!itemReceived)
-                                {
-                                    InventoryManager.Instance.AddItem(givenQuestItem);
-                                    itemReceived = true;
-                                    questCompeleted = true;
-                                }
-                                else
-                                {
-                                    zeroText();
-                                }
-                                gameManager.questActiveGeneral = false;
-                                gameManager.currentQuest = string.Empty;
-                                gameManager.setTextHiden();
+                                zeroText();
+
                             }
+                            hasReceivedClue = true;
+                            gameManager.questActiveGeneral = false;
+                            gameManager.currentQuest = string.Empty;
+                            gameManager.setTextHiden();
+                            
                         }
                         else
                         {
@@ -255,8 +211,13 @@ public class Dialogue : MonoBehaviour
 
                 }
             }
+            if(questCompeleted && !questActive)
+            {
+                textComponent.text = "You have already completed my quest!";
+
+            }
         }
-        else if(!hasQuest && !gameManager.questActiveGeneral && QuestActiveOnDay == gameManager.dayNumber)
+        else if(!hasQuest && !gameManager.questActiveGeneral)
         {
             if (index < lines.Length - 1)
             {
@@ -265,32 +226,9 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
             else
-            {
-                if (LieTruth.Length != 0)
-                {
-                    int responseIndex = Random.Range(0, 2);
-                    textComponent.text = LieTruth[responseIndex];
-                    if (!itemReceived)
-                    {
-                        InventoryManager.Instance.AddItem(givenQuestItem);
-                        inventoryManage.ListItems();
-                        questCompeleted = true;
-                        questActive = false;
-                        itemReceived = true;
-                    }
-                    hasReceivedClue = true;
-                    gameManager.questActiveGeneral = false;
-                    gameManager.currentQuest = string.Empty;
-                    gameManager.setTextHiden();
-                }
-                else
-                {
-                    zeroText();
-                }
+            {              
+                zeroText();              
             } 
-        }else if(QuestActiveOnDay != gameManager.dayNumber)
-        {
-            zeroText();
         }
     }
 

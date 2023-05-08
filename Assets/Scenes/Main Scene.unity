@@ -12389,6 +12389,25 @@ MonoBehaviour:
   - Book
   - Potion
   inventoryM: {fileID: 1773913509}
+  npcIcon: {fileID: 21300000, guid: a2e92e8cd7a46cb41bd0e2d23c6cee1d, type: 3}
+  NPCname: Village Elder
+  dialoguePanel: {fileID: 1643833485632385903}
+  textComponent: {fileID: 1643833486221966908}
+  npcImageObject: {fileID: 1643833487049844076}
+  npcName: {fileID: 1643833487568225081}
+  lines: []
+  questActiveText: You are already doing my quest!
+  HasQuestItemText: []
+  textSpeed: 0.5
+  hasQuest: 1
+  ItemNeededForQuest: 
+  ItemNeededInInvToCompleteQuestName: Branch
+  givenQuestItem: {fileID: 0}
+  inventoryManage: {fileID: 1773913509}
+  playerChop: {fileID: 0}
+  SubmitQuestItemSlot: {fileID: 5424203315893459247}
+  QuestActiveOnDay: 3
+  gameManager: {fileID: 1744478698}
 --- !u!212 &5063389064890694062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12700,38 +12719,36 @@ MonoBehaviour:
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
   lines:
-  - Good afternoon Little Red, What brings you here?
-  - "Oh you are looking for clues of the recent Wolf attack? Sorry dear, I\u2019m
-    in the middle of work if you could help me I have some time to talk. How does
-    that sound?"
-  - "You see I need some more wood for the table I\u2019m working on."
-  - I left my spare Axe around somewhere can you find it and chop down some wood
-    of the tree please?
-  LieTruth:
-  - "You want to know about the villager that got murderd right? I heard he was attacked
-    at night and had bites all over his body it must be an animal that got him. That\u2019s
-    all I know about it I hope I helped."
-  - "You want to know about the villager that got murderd right? I heard about how
-    he was attacked in the afternoon. He got stabbed all around what kind of sick
-    person could have done this. That\u2019s all I got to say I hope I helped."
-  questActiveText: You are already doing my quest!
+  - Good Day Little Red, what brings you here today?
+  - "I can\u2019t talk too much righ now sorry dear, I\u2019m in the middle of work
+    if you could help me I have some time to talk. How does that sound?"
+  - "Thanks! you see I need some more wood for the table I\u2019m working on."
+  - I left my spare Axe around here somewhere can you find it and chop down some
+    wood from the tree please?
+  questActiveText: I left my spare Axe around here somewhere can you find it and
+    chop down some wood from the tree please?
   HasQuestItemText:
-  - Give me the wood and we will talk further
-  - "Thank you Little Red! I\u2019ll tell you what I know"
+  - I left my spare Axe around here somewhere can you find it and chop down some
+    wood from the tree please?
+  - "Thank you Little Red! Let\u2019s talk."
+  - Have you heard about the villager that got killed? Crazy world we live in.
+  - "We were supposed to get a drink at my place. But he never showed I thought he
+    was at his House. His wife won\u2019t let him go for drinks when they have an
+    argument\u2026"
+  - "The villagers believe that the Wolf is back but that can\u2019t be true."
+  - "It looks like it, but I\u2019m sure I killed that monster remember when I rescued
+    you? I chopped him in half there's no way he could still be alive."
+  - It is indeed very strange it does look like a Wolf attacked him.
+  - It is indeed very strange it does look like a Wolf attacked him.
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: Axe
   ItemNeededInInvToCompleteQuestName: Wood
-  givenQuestItem: {fileID: 11400000, guid: 866a2b2997d64d842af465f47dcad1c9, type: 2}
-  questActive: 0
-  questCompeleted: 0
-  itemReceived: 0
-  hasReceivedClue: 0
+  givenQuestItem: {fileID: 11400000, guid: 298cf002ff348674b951cae987e9bf40, type: 2}
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 8911966529326209771}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
-  QuestActiveOnDay: 2
   gameManager: {fileID: 1744478698}
 --- !u!212 &7618004518791851582
 SpriteRenderer:
@@ -12861,9 +12878,6 @@ MonoBehaviour:
   - aaaa
   - bbbbbb
   - ccccc
-  LieTruth:
-  - Lie
-  - Truth
   questActiveText: You are already doing my quest!
   HasQuestItemText: []
   textSpeed: 0.5
@@ -12871,15 +12885,10 @@ MonoBehaviour:
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine
   givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
-  questActive: 0
-  questCompeleted: 0
-  itemReceived: 0
-  hasReceivedClue: 0
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
-  QuestActiveOnDay: 1
   gameManager: {fileID: 1744478698}
 --- !u!212 &7618004518839659970
 SpriteRenderer:
@@ -13082,30 +13091,26 @@ MonoBehaviour:
   npcImageObject: {fileID: 1643833487049844076}
   npcName: {fileID: 1643833487568225081}
   lines:
-  - aaaa
-  - bbbbbb
-  - ccccc
-  LieTruth:
-  - Lie
-  - Truth
-  questActiveText: You are already doing my quest!
+  - Heyyyy there little one.
+  - Hm? you are investigating the murder?
+  - "OOHHH RIIIIGHT someone died last night I think I saw 2 people running around
+    earliiier. I\u2019m not entirely suuure who."
+  - "I could reallyyy use a drink right noww then we can talk.\u2026"
+  - 
+  - 
+  questActiveText: "I could reallyyy use a drink right noww then we can talk.\u2026"
   HasQuestItemText:
-  - '*hik* give me my wine!'
+  - Thank youuu Red you are so kind.
   - thank you little one
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine
   givenQuestItem: {fileID: 11400000, guid: 866a2b2997d64d842af465f47dcad1c9, type: 2}
-  questActive: 0
-  questCompeleted: 0
-  itemReceived: 0
-  hasReceivedClue: 0
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   inventory: {fileID: 1773913508}
-  QuestActiveOnDay: 1
   gameManager: {fileID: 1744478698}
 --- !u!61 &7618004518901072846
 BoxCollider2D:
