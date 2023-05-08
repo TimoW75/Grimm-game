@@ -17061,7 +17061,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586265771}
-  - component: {fileID: 1586265772}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -17105,7 +17104,6 @@ Transform:
   - {fileID: 1709566170}
   - {fileID: 611085631}
   - {fileID: 55670029}
-  - {fileID: 1834422691}
   m_Father: {fileID: 1214022053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17143,7 +17141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1589982324
 MonoBehaviour:
@@ -17847,7 +17845,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222687334}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1840039856
 MonoBehaviour:
@@ -18090,7 +18088,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49602422, y: 0.37629774}
+    pivot: {x: 0.66300297, y: 0.29456586}
     oldSize: {x: 38.56, y: 34.7}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -20423,7 +20421,10 @@ MonoBehaviour:
   questActiveText: "I could reallyyy use a drink right noww then we can talk.\u2026"
   HasQuestItemText:
   - Thank youuu Red you are so kind.
-  - thank you little one
+  - aaahhh that hits the spot.
+  - 
+  - 
+  - 
   textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
@@ -20565,15 +20566,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800164897942792940, guid: 8ebb652b20a7d47d98c308d028394a50, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7800164897942792940, guid: 8ebb652b20a7d47d98c308d028394a50, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7800164897942792940, guid: 8ebb652b20a7d47d98c308d028394a50, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7800164897942792940, guid: 8ebb652b20a7d47d98c308d028394a50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
