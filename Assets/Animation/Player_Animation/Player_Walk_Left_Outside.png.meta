@@ -124,8 +124,8 @@ TextureImporter:
         y: 0
         width: 516
         height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.027280677}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,8 +145,8 @@ TextureImporter:
         y: 0
         width: 516
         height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.031698592}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Player_Walk_Left_Outside_2
       rect:
         serializedVersion: 2
-        x: 1032
+        x: 1035
         y: 0
         width: 516
         height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.50974387, y: 0.027280677}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,8 +187,8 @@ TextureImporter:
         y: 0
         width: 516
         height: 1138
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51948726, y: 0.031698592}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
