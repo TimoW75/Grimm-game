@@ -28,11 +28,10 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private bool hasQuest;
     [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private string ItemNeededInInvToCompleteQuestName;
-    [SerializeField] private Item givenQuestItem;
+    [SerializeField] private Item[] givenQuestItem;
     private bool questActive;
     private bool questCompeleted;
     private bool itemReceived;
-    private bool hasReceivedClue;
 
     public InventoryManager inventoryManage;
 
@@ -65,29 +64,28 @@ public class Dialogue : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && !hasReceivedClue)
+        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive )
         {
             if (dialoguePanel.activeInHierarchy)
             {
                 NextLine();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && hasReceivedClue)
+        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive)
         {
             if (dialoguePanel.activeInHierarchy)
             {
                 zeroText();
-                hasReceivedClue = false;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && !hasReceivedClue && !questCompeleted)
+        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && !questCompeleted)
         {
             if (dialoguePanel.activeInHierarchy)
             {
                 NextLine();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && hasReceivedClue && questCompeleted)
+        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questActive && questCompeleted)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -152,7 +150,7 @@ public class Dialogue : MonoBehaviour
                 }
 
             }
-            else if (questCompeleted && questActive && hasReceivedClue)
+            else if (questCompeleted && questActive)
             {
                 textComponent.text = "I already told you what you wanted to know";
             }
@@ -175,7 +173,7 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = string.Empty;
                 textComponent.text = lines[index];
             }
-            else if (questCompeleted && questActive && itemReceived && hasReceivedClue)
+            else if (questCompeleted && questActive && itemReceived)
             {
                 zeroText();
             }
@@ -190,8 +188,8 @@ public class Dialogue : MonoBehaviour
                 {
                     playerChop.setActiveAxe();
                 }
-                zeroText();
 
+                zeroText();
             }
             else if (questActive && !questCompeleted)
             {
@@ -205,26 +203,29 @@ public class Dialogue : MonoBehaviour
                             textComponent.text = string.Empty;
                             textComponent.text = HasQuestItemText[index];
                         }
-                        else if (!hasReceivedClue)
+                        else if (!itemReceived)
                         {
-                           
-                            if (!itemReceived)
+                            for (int i = 0; i < givenQuestItem.Length; i++)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem);
-                                itemReceived = true;
-                                questCompeleted = true;
+                                InventoryManager.Instance.AddItem(givenQuestItem[i]);
                             }
-                            else
-                            {
-                                zeroText();
-                            }
+                            itemReceived = true;
+                            questCompeleted = true;
                             gameManager.questActiveGeneral = false;
                             gameManager.currentQuest = string.Empty;
                             gameManager.setTextHiden();
-                            
+
+                            for (int i = inventoryManage.items.Count - 1; i >= 0; i--)
+                            {
+                                if (inventoryManage.items[i].name == ItemNeededInInvToCompleteQuestName)
+                                {
+                                    inventoryManage.items.RemoveAt(i);
+                                }
+                            }
+
                         }
                         else
-                        {
+                        { 
                             zeroText();
                         }
                     }

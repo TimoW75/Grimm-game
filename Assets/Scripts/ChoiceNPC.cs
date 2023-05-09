@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class ChoiceNPC : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private bool hasQuest;
     [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private string ItemNeededInInvToCompleteQuestName;
-    [SerializeField] private Item givenQuestItem;
+    [SerializeField] private Item[] givenQuestItem;
     private bool questActive;
     private bool questCompeleted;
     private bool itemReceived;
@@ -48,6 +49,19 @@ public class ChoiceNPC : MonoBehaviour
     public gameManager gameManager;
 
 
+    private bool field0;
+    private bool field1;
+    private bool field2;
+    private bool field3;
+    private bool field4;
+    private bool field5;
+    private bool field6;
+    private bool field7;
+    private bool field8;
+    private bool field9;
+    private bool field10;
+
+    private int numberCorrect = 0;
     void Start()
     {
         choicePanel.SetActive(false);
@@ -68,6 +82,16 @@ public class ChoiceNPC : MonoBehaviour
                     StartDialgue();
 
                 }
+            }
+            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+            {
+                choicePanel.SetActive(false);
+                inventory.SetActive(false);
+                checkFilledFields();
+                DestroyImageChildrenWithTag();
+                playerIsClose = false;
+                dialoguePanel.SetActive(false);
+                zeroText();
             }
             if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && !hasReceivedClue)
             {
@@ -116,6 +140,16 @@ public class ChoiceNPC : MonoBehaviour
                     inventory.SetActive(true);
                 }
             }
+            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+            {
+                choicePanel.SetActive(false);
+                inventory.SetActive(false);
+                checkFilledFields();
+                DestroyImageChildrenWithTag();
+                playerIsClose = false;
+                dialoguePanel.SetActive(false);
+                zeroText();
+            }
         }     
     }
 
@@ -163,7 +197,7 @@ public class ChoiceNPC : MonoBehaviour
             {
                 if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
                 {
-
+                    numberCorrect++;
                     print("number " + i + " is right");
                 }
                 else
@@ -172,6 +206,18 @@ public class ChoiceNPC : MonoBehaviour
                 }
             }
         }
+        print(numberCorrect);
+        if (numberCorrect == 4)
+        {
+            gameManager.dayNumber++;
+        }else if (numberCorrect == 7)
+        {
+            gameManager.dayNumber++;
+        }else if(numberCorrect == 10)
+        {
+            gameManager.dayNumber++;
+        }
+
     }
 
 
@@ -290,7 +336,10 @@ public class ChoiceNPC : MonoBehaviour
 
                             if (!itemReceived)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem);
+                                for (int i = 0; i < givenQuestItem.Length; i++)
+                                {
+                                    InventoryManager.Instance.AddItem(givenQuestItem[i]);
+                                }
                                 itemReceived = true;
                                 questCompeleted = true;
                             }

@@ -11,6 +11,7 @@ public class SheepController : MonoBehaviour
     public float stopChance = 0.1f;
     [SerializeField] private Item sheepItem;
     public InventoryManager inventoryManage;
+    public gameManager gameManager;
 
     private GameObject player;
     private Rigidbody2D rb;
@@ -160,13 +161,11 @@ public class SheepController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        print(gameObject.tag);
-        if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null)
+        if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null && gameManager.currentQuest == "Shepherd")
         {
             Debug.Log("Schaap gevangen");
             Destroy(gameObject);
             InventoryManager.Instance.AddItem(sheepItem);
-
         }
     }
 
