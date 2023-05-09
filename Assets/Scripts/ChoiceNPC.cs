@@ -54,6 +54,7 @@ public class ChoiceNPC : MonoBehaviour
     void Start()
     {
         choicePanel.SetActive(false);
+        disableFields();
     }
     private void Update()
     {
@@ -375,5 +376,4 @@ public class ChoiceNPC : MonoBehaviour
             zeroText();
         }
     }
-
 }

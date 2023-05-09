@@ -22462,11 +22462,12 @@ MonoBehaviour:
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Branch
   givenQuestItem: []
-  inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
   QuestActiveOnDay: 3
   gameManager: {fileID: 1744478698}
+  inventoryManage: {fileID: 1773913509}
+  DayNight: {fileID: 0}
 --- !u!212 &5063389064890694062
 SpriteRenderer:
   m_ObjectHideFlags: 0
