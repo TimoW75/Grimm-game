@@ -19578,7 +19578,6 @@ MonoBehaviour:
   questActiveText: "\u2026I don\u2019t have anymore clues for you to be honest if
     you act like this."
   HasQuestItemText: []
-  textSpeed: 0.5
   hasQuest: 0
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine
@@ -20274,8 +20273,8 @@ GameObject:
   - component: {fileID: 1742531708}
   - component: {fileID: 1742531712}
   - component: {fileID: 1742531711}
-  - component: {fileID: 1742531710}
   - component: {fileID: 1742531709}
+  - component: {fileID: 1742531713}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -20310,34 +20309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d23827c944652a40af8b6ddc0fe689a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clueItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
+  clueItem: {fileID: 11400000, guid: 1197a97aa1aa1054f9c72c35db65f56f, type: 2}
   inventoryManage: {fileID: 1773913509}
---- !u!61 &1742531710
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742531707}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.65, y: 1.61}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.65, y: 1.61}
-  m_EdgeRadius: 0
 --- !u!50 &1742531711
 Rigidbody2D:
   serializedVersion: 4
@@ -20400,7 +20373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cd1bc36084c02974f86d25935060bfff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20411,6 +20384,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1742531713
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742531707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.29, y: 3.21}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.29, y: 3.21}
+  m_EdgeRadius: 0
 --- !u!1 &1744478696
 GameObject:
   m_ObjectHideFlags: 0
@@ -20821,7 +20820,6 @@ MonoBehaviour:
     then this terrible thing happened. Maybe if you talk to the lumberjack he could
     tell you more?"
   - "\u2026Sorry this is all I can say I don\u2019t want to talk about it anymore."
-  textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Flowers
@@ -23606,7 +23604,6 @@ MonoBehaviour:
     you? I chopped him in half there's no way he could still be alive."
   - It is indeed very strange it does look like a Wolf attacked him.
   - "But I don\u2019t know there is definitely something fishy going on."
-  textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: Axe
   ItemNeededInInvToCompleteQuestName: Wood
@@ -23761,7 +23758,6 @@ MonoBehaviour:
   - You do seem tired have you been sleeping at all since the incident?
   - No? Geez Red you should take a break of the investigation if you seem to have
     hard time remembering stuff with these black outs.
-  textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Sheep
@@ -23990,7 +23986,6 @@ MonoBehaviour:
   - "That\u2019s all I can remember."
   - Are you doing okay Red? Are you thirsty or something? I would offer you a sip
     but not until you are 18!
-  textSpeed: 0.5
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine

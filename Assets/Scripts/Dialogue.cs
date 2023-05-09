@@ -16,10 +16,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI npcName;
 
     [SerializeField] private string[] lines;
-    [SerializeField] private string questActiveText = "You are already doing my quest!";
+    [SerializeField] private string questActiveText;
     [SerializeField] private string[] HasQuestItemText;
-
-    [SerializeField] private float textSpeed;
 
     private int index;
     private bool playerIsClose;
@@ -157,7 +155,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            textComponent.text = "Come back tomorrow";
+            textComponent.text = "I'm sorry Red, i can't talk today";
         }
     }
 
