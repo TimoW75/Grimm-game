@@ -2723,14 +2723,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525545965}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -32.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.36955985, w: 0.92920697}
+  m_LocalPosition: {x: -42.4, y: -55.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 348325482}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -43.377}
 --- !u!114 &525545967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18341,7 +18341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325304470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.759995, y: -10.668089, z: -2.312355}
+  m_LocalPosition: {x: 117.8, y: -10.668089, z: -2.312355}
   m_LocalScale: {x: 3.3511, y: 3.3511, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19482,6 +19482,7 @@ Transform:
   - {fileID: 1709566170}
   - {fileID: 611085631}
   - {fileID: 55670029}
+  - {fileID: 1992308537}
   m_Father: {fileID: 1214022053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19581,7 +19582,7 @@ MonoBehaviour:
   hasQuest: 0
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine
-  givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -20272,6 +20273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744478697}
   - component: {fileID: 1744478698}
+  - component: {fileID: 1744478699}
   m_Layer: 0
   m_Name: Game manager
   m_TagString: Untagged
@@ -20311,6 +20313,22 @@ MonoBehaviour:
   QuestActiveTextBox: {fileID: 890826027}
   questText: {fileID: 332014697}
   dayNumber: 2
+--- !u!114 &1744478699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744478696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46809da1f77391d4f929d08318537a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cycleDuration: 10
+  maxIntensity: 1
+  minIntensity: 0.2
+  globalLight: {fileID: 1654075862}
 --- !u!1 &1745619976
 GameObject:
   m_ObjectHideFlags: 0
@@ -20659,7 +20677,7 @@ MonoBehaviour:
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Flowers
-  givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -21137,6 +21155,116 @@ Transform:
   m_Father: {fileID: 1962517071}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1992308536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992308537}
+  - component: {fileID: 1992308540}
+  - component: {fileID: 1992308539}
+  - component: {fileID: 1992308538}
+  m_Layer: 0
+  m_Name: Fence (36)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992308537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992308536}
+  m_LocalRotation: {x: 0.55922884, y: 0.55922884, z: 0.43273905, w: 0.43273905}
+  m_LocalPosition: {x: 156.08, y: -69.1, z: -3.2036943}
+  m_LocalScale: {x: 3.3511, y: 3.3511, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586265771}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 104.534, z: 90}
+--- !u!61 &1992308538
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992308536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.4318227, y: 0.98736954}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3354962, y: 1.9730947}
+  m_EdgeRadius: 0
+--- !u!23 &1992308539
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992308536}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1fc121be3f680634fbb8cab1fa2d47c8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1992308540
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992308536}
+  m_Mesh: {fileID: 4300000, guid: 6a52aea886ff71343a7b3ac3ec6dfd92, type: 3}
 --- !u!1 &2085414637
 GameObject:
   m_ObjectHideFlags: 0
@@ -22333,7 +22461,7 @@ MonoBehaviour:
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Branch
-  givenQuestItem: {fileID: 0}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -23332,7 +23460,7 @@ MonoBehaviour:
   hasQuest: 1
   ItemNeededForQuest: Axe
   ItemNeededInInvToCompleteQuestName: Wood
-  givenQuestItem: {fileID: 11400000, guid: 298cf002ff348674b951cae987e9bf40, type: 2}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 8911966529326209771}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -23487,7 +23615,7 @@ MonoBehaviour:
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Sheep
-  givenQuestItem: {fileID: 11400000, guid: b952f602304f4f84486d3c7e7d9a8fb9, type: 2}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -23716,7 +23844,7 @@ MonoBehaviour:
   hasQuest: 1
   ItemNeededForQuest: 
   ItemNeededInInvToCompleteQuestName: Wine
-  givenQuestItem: {fileID: 11400000, guid: 866a2b2997d64d842af465f47dcad1c9, type: 2}
+  givenQuestItem: []
   inventoryManage: {fileID: 1773913509}
   playerChop: {fileID: 0}
   SubmitQuestItemSlot: {fileID: 5424203315893459247}
@@ -24058,8 +24186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17.5132, y: 4.0263996}
-  m_SizeDelta: {x: -50.0085, y: -21.3118}
+  m_AnchoredPosition: {x: -17.5132, y: 3.749}
+  m_SizeDelta: {x: -50.0085, y: -21.0815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8958194608147242370
 GameObject:
@@ -24078,7 +24206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8958194608147242373
 CanvasRenderer:
   m_ObjectHideFlags: 0

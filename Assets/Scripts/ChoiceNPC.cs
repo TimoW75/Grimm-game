@@ -40,26 +40,15 @@ public class ChoiceNPC : MonoBehaviour
     private bool itemReceived;
     private bool hasReceivedClue;
 
-    public InventoryManager inventoryManage;
 
     public PlayerChopping playerChop;
     [SerializeField] private GameObject SubmitQuestItemSlot;
 
     [SerializeField] private int QuestActiveOnDay;
     public gameManager gameManager;
+    public InventoryManager inventoryManage;
 
-
-    private bool field0;
-    private bool field1;
-    private bool field2;
-    private bool field3;
-    private bool field4;
-    private bool field5;
-    private bool field6;
-    private bool field7;
-    private bool field8;
-    private bool field9;
-    private bool field10;
+    public DayNightCycle DayNight;
 
     private int numberCorrect = 0;
     void Start()
@@ -198,11 +187,6 @@ public class ChoiceNPC : MonoBehaviour
                 if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
                 {
                     numberCorrect++;
-                    print("number " + i + " is right");
-                }
-                else
-                {
-                    print("number " + i + " is wrong");
                 }
             }
         }
@@ -210,14 +194,21 @@ public class ChoiceNPC : MonoBehaviour
         if (numberCorrect == 4)
         {
             gameManager.dayNumber++;
-        }else if (numberCorrect == 7)
-        {
-            gameManager.dayNumber++;
-        }else if(numberCorrect == 10)
-        {
-            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
         }
-
+        else if (numberCorrect == 7)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
+        }
+        else if(numberCorrect == 10)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
+        }
     }
 
 
