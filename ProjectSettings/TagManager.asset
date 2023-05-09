@@ -9,6 +9,7 @@ TagManager:
   - EmptySlot
   - Axe
   - Sheep
+  - Olive
   layers:
   - Default
   - TransparentFX

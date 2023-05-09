@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class ChoiceNPC : MonoBehaviour
 {
@@ -33,21 +34,23 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private bool hasQuest;
     [SerializeField] private string ItemNeededForQuest;
     [SerializeField] private string ItemNeededInInvToCompleteQuestName;
-    [SerializeField] private Item givenQuestItem;
+    [SerializeField] private Item[] givenQuestItem;
     private bool questActive;
     private bool questCompeleted;
     private bool itemReceived;
     private bool hasReceivedClue;
 
-    public InventoryManager inventoryManage;
 
     public PlayerChopping playerChop;
     [SerializeField] private GameObject SubmitQuestItemSlot;
 
     [SerializeField] private int QuestActiveOnDay;
     public gameManager gameManager;
+    public InventoryManager inventoryManage;
 
+    public DayNightCycle DayNight;
 
+    private int numberCorrect = 0;
     void Start()
     {
         choicePanel.SetActive(false);
@@ -68,6 +71,16 @@ public class ChoiceNPC : MonoBehaviour
                     StartDialgue();
 
                 }
+            }
+            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+            {
+                choicePanel.SetActive(false);
+                inventory.SetActive(false);
+                checkFilledFields();
+                DestroyImageChildrenWithTag();
+                playerIsClose = false;
+                dialoguePanel.SetActive(false);
+                zeroText();
             }
             if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && !hasReceivedClue)
             {
@@ -116,6 +129,16 @@ public class ChoiceNPC : MonoBehaviour
                     inventory.SetActive(true);
                 }
             }
+            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+            {
+                choicePanel.SetActive(false);
+                inventory.SetActive(false);
+                checkFilledFields();
+                DestroyImageChildrenWithTag();
+                playerIsClose = false;
+                dialoguePanel.SetActive(false);
+                zeroText();
+            }
         }     
     }
 
@@ -163,14 +186,28 @@ public class ChoiceNPC : MonoBehaviour
             {
                 if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
                 {
-
-                    print("number " + i + " is right");
-                }
-                else
-                {
-                    print("number " + i + " is wrong");
+                    numberCorrect++;
                 }
             }
+        }
+        print(numberCorrect);
+        if (numberCorrect == 4)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
+        }
+        else if (numberCorrect == 7)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
+        }
+        else if(numberCorrect == 10)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            // transport into her room
         }
     }
 
@@ -290,7 +327,10 @@ public class ChoiceNPC : MonoBehaviour
 
                             if (!itemReceived)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem);
+                                for (int i = 0; i < givenQuestItem.Length; i++)
+                                {
+                                    InventoryManager.Instance.AddItem(givenQuestItem[i]);
+                                }
                                 itemReceived = true;
                                 questCompeleted = true;
                             }
@@ -335,5 +375,4 @@ public class ChoiceNPC : MonoBehaviour
             zeroText();
         }
     }
-
 }
