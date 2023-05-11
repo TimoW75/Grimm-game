@@ -106,8 +106,6 @@ MonoBehaviour:
   itemPrefab: {fileID: 7247199999358180470, guid: f290958e7243e4d588ba455cc56a171d, type: 3}
   choppedTreeSprite: {fileID: 21300000, guid: 50b881a5e372e44549ddccc0ca7b2dd0, type: 3}
   dropDistance: 1
-  offsetX: -36.98
-  offsetY: -14.2
   yOffset: -14.2
 --- !u!61 &3351982698685375743
 BoxCollider2D:
@@ -122,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.34496212, y: 7.3244658}
+  m_Offset: {x: -0.019638062, y: 3.15456}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.506899, y: 0.029489608}
@@ -133,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.775217, y: 15.4759655}
+  m_Size: {x: 3.3171082, y: 7.136154}
   m_EdgeRadius: 0
 --- !u!95 &3351982698685375739
 Animator:

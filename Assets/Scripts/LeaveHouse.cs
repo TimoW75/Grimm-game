@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 
@@ -8,10 +7,17 @@ public class LeaveHouse : MonoBehaviour
     [SerializeField] private float outDoorTime = 0.5f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(exitHouse(collision.gameObject));
+        CapsuleCollider2D capsuleCollider = collision.GetComponent<CapsuleCollider2D>();
+        if (capsuleCollider == null)
+        {
+            // Ignore collisions with other types of colliders
+            return;
+        }
+
+        StartCoroutine(ExitHouse(collision.gameObject));
     }
 
-    private IEnumerator exitHouse(GameObject collision)
+    private IEnumerator ExitHouse(GameObject collision)
     {
         yield return new WaitForSeconds(outDoorTime);
         collision.gameObject.transform.position = spawnPointOutsideHouse.transform.position;
