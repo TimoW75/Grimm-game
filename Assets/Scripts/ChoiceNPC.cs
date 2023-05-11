@@ -186,12 +186,10 @@ public class ChoiceNPC : MonoBehaviour
             {
                 if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
                 {
-                    print("number" + i);
                     numberCorrect++;
                 }
             }
         }
-        print(numberCorrect);
         if (numberCorrect == 4)
         {
             gameManager.dayNumber++;
