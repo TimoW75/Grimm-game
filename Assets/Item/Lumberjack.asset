@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
   itemName: Lumberjack
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: f78f46aa5a4c8124d93032939367b3b7, type: 3}
   isDefaultItem: 0

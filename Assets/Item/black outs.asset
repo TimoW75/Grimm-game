@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: black outs
   m_EditorClassIdentifier: 
   itemName: black outs
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: d82246577595a3e48bccedba88e62c36, type: 3}
   isDefaultItem: 0

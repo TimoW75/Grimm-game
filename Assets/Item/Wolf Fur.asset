@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wolf Fur
   m_EditorClassIdentifier: 
   itemName: Wolf fur
-  itemIcon: {fileID: 21300000, guid: 2d221536262037b42833afa8c64081d0, type: 3}
+  itemIcon: {fileID: 21300000, guid: d97ca26e4436e9642b0c57f638bcdee0, type: 3}
   isDefaultItem: 0

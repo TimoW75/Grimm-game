@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BookMC
   m_EditorClassIdentifier: 
   itemName: BookMC
-  itemIcon: {fileID: 21300000, guid: 9bf76ba5d7055d9419b902fa600e6c38, type: 3}
+  itemIcon: {fileID: 21300000, guid: 96b8adf47efbdd743a30b791475b5920, type: 3}
   isDefaultItem: 0

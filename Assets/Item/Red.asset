@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Red
   m_EditorClassIdentifier: 
   itemName: Red
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: d7add951cbee9b84a86f17eaeb763de7, type: 3}
   isDefaultItem: 0

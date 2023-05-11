@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: The Forest
   m_EditorClassIdentifier: 
   itemName: The Forest
-  itemIcon: {fileID: 21300000, guid: 03cf9377a7cf9438b8085cc1200b76b1, type: 3}
+  itemIcon: {fileID: 21300000, guid: c160091b9d9e7d04aa78722b180c8181, type: 3}
   isDefaultItem: 0

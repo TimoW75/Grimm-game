@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: his House
   m_EditorClassIdentifier: 
   itemName: his House
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: db44536ffdf67124b9c3ce8f1d070608, type: 3}
   isDefaultItem: 0

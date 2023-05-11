@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sheep
   m_EditorClassIdentifier: 
   itemName: Sheep
-  itemIcon: {fileID: -1924613563, guid: 0ad2efd828a4b46319decd941ae31d5a, type: 3}
+  itemIcon: {fileID: -600073551, guid: 0ad2efd828a4b46319decd941ae31d5a, type: 3}
   isDefaultItem: 0

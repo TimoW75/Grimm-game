@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.LowLevel;
 
 public class ChoiceNPC : MonoBehaviour
 {
@@ -40,8 +41,6 @@ public class ChoiceNPC : MonoBehaviour
     private bool itemReceived;
     private bool hasReceivedClue;
 
-
-    public PlayerChopping playerChop;
     [SerializeField] private GameObject SubmitQuestItemSlot;
 
     [SerializeField] private int QuestActiveOnDay;
@@ -49,8 +48,10 @@ public class ChoiceNPC : MonoBehaviour
     public InventoryManager inventoryManage;
 
     public DayNightCycle DayNight;
-
+    public CutsceneController CutsceneController;
     private int numberCorrect = 0;
+    [SerializeField] private GameObject startPosHouse;
+    [SerializeField] private GameObject player;
     void Start()
     {
         choicePanel.SetActive(false);
@@ -72,7 +73,7 @@ public class ChoiceNPC : MonoBehaviour
 
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose)
+            else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && questCompeleted)
             {
                 choicePanel.SetActive(false);
                 inventory.SetActive(false);
@@ -146,6 +147,7 @@ public class ChoiceNPC : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            disableEnableFields();
             playerIsClose = true;
 
         }
@@ -178,37 +180,6 @@ public class ChoiceNPC : MonoBehaviour
         inventoryM.ListItems();
     }
 
-    void checkFilledFields()
-    {
-        for (int i = 0; i < Field.Length; i++)
-        {   
-            if (Field[i].gameObject.transform.childCount != 0)
-            {
-                if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
-                {
-                    numberCorrect++;
-                }
-            }
-        }
-        if (numberCorrect == 4)
-        {
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
-            // transport into her room
-        }
-        else if (numberCorrect == 7)
-        {
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
-            // transport into her room
-        }
-        else if(numberCorrect == 10)
-        {
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
-            // transport into her room
-        }
-    }
 
 
     public void zeroText()
@@ -225,6 +196,74 @@ public class ChoiceNPC : MonoBehaviour
             inventory.SetActive(false);
         }
     }
+    void checkFilledFields()
+    {
+        for (int i = 0; i < Field.Length; i++)
+        {   
+            if (Field[i].gameObject.transform.childCount != 0)
+            {
+                if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
+                {
+                    numberCorrect++;
+                }
+            }
+        }
+        if (numberCorrect == 4)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            player.transform.position = startPosHouse.transform.position;
+        }
+        else if (numberCorrect == 7)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            CutsceneController.PlayCutscene(1);
+            player.transform.position = startPosHouse.transform.position;
+        }
+        else if(numberCorrect == 10)
+        {
+            gameManager.dayNumber++;
+            DayNight.cycleLight();
+            player.transform.position = startPosHouse.transform.position;
+            
+        }
+    }
+
+    private void disableEnableFields()
+    {
+        if (gameManager.dayNumber != 3)
+        {
+            for (int i = 0; i < Field.Length; i++)
+            {
+                Field[i].SetActive(false);
+            }
+        }
+        if( gameManager.dayNumber == 1)
+        {
+            Field[0].SetActive(true);
+            Field[2].SetActive(true);
+            Field[3].SetActive(true);
+            Field[5].SetActive(true);
+        }else if(gameManager.dayNumber == 2)
+        {
+            Field[1].SetActive(true);
+            Field[4].SetActive(true);
+            Field[6].SetActive(true);
+            Field[0].SetActive(true);
+            Field[2].SetActive(true);
+            Field[3].SetActive(true);
+            Field[5].SetActive(true);
+        }
+        else if(gameManager.dayNumber == 3)
+        {
+            for (int i = 0; i < Field.Length; i++)
+            {
+                Field[i].SetActive(true);
+            }
+        }    
+    }
+
 
     void StartDialgue()
     {
@@ -236,7 +275,7 @@ public class ChoiceNPC : MonoBehaviour
         {
             if (gameManager.questActiveGeneral && !questActive)
             {
-                textComponent.text = "You are already doing a quest";
+                textComponent.text = questActiveText;
             }
             else if (!questActive && !questCompeleted && !gameManager.questActiveGeneral)
             {
@@ -265,18 +304,11 @@ public class ChoiceNPC : MonoBehaviour
                 }
 
             }
-            else if (questCompeleted && questActive && hasReceivedClue)
-            {
-                textComponent.text = "You have already completed my quest!";
-            }
         }
         else
         {
-            textComponent.text = "Come back tomorrow";
+            textComponent.text = "I'm sorry Red, i can't talk today";
         }
-
-
-
     }
 
 
@@ -291,9 +323,18 @@ public class ChoiceNPC : MonoBehaviour
                 textComponent.text = string.Empty;
                 textComponent.text = lines[index];
             }
-            else if (questCompeleted && questActive && itemReceived && hasReceivedClue)
+            else if (questCompeleted && questActive)
             {
-                zeroText();
+                if (index < HasQuestItemText.Length - 1)
+                {
+                    index++;
+                    textComponent.text = string.Empty;
+                    textComponent.text = HasQuestItemText[index];
+                }
+                else
+                {
+                    zeroText();
+                }
             }
             else if (!questActive && !questCompeleted)
             {
@@ -301,13 +342,7 @@ public class ChoiceNPC : MonoBehaviour
                 gameManager.questActiveGeneral = true;
                 gameManager.currentQuest = gameObject.name;
                 gameManager.setTextActive();
-
-                if (ItemNeededForQuest == "Axe" && playerChop != null)
-                {
-                    playerChop.setActiveAxe();
-                }
                 zeroText();
-
             }
             else if (questActive && !questCompeleted)
             {
@@ -321,26 +356,25 @@ public class ChoiceNPC : MonoBehaviour
                             textComponent.text = string.Empty;
                             textComponent.text = HasQuestItemText[index];
                         }
-                        else if (!hasReceivedClue)
+                        else if (!itemReceived)
                         {
-
-                            if (!itemReceived)
+                            for (int i = 0; i < givenQuestItem.Length; i++)
                             {
-                                for (int i = 0; i < givenQuestItem.Length; i++)
-                                {
-                                    InventoryManager.Instance.AddItem(givenQuestItem[i]);
-                                }
-                                itemReceived = true;
-                                questCompeleted = true;
+                                InventoryManager.Instance.AddItem(givenQuestItem[i]);
                             }
-                            else
-                            {
-                                zeroText();
-                            }
-                            hasReceivedClue = true;
+                            itemReceived = true;
+                            questCompeleted = true;
                             gameManager.questActiveGeneral = false;
                             gameManager.currentQuest = string.Empty;
                             gameManager.setTextHiden();
+
+                            for (int i = inventoryManage.items.Count - 1; i >= 0; i--)
+                            {
+                                if (inventoryManage.items[i].name == ItemNeededInInvToCompleteQuestName)
+                                {
+                                    inventoryManage.items.RemoveAt(i);
+                                }
+                            }
 
                         }
                         else
@@ -366,7 +400,9 @@ public class ChoiceNPC : MonoBehaviour
             }
             else
             {
+
                 zeroText();
+
             }
         }
         else if (QuestActiveOnDay != gameManager.dayNumber)

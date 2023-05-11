@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: hungry
   m_EditorClassIdentifier: 
   itemName: hungry
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: fc5eeb55bfbf1b14d844338fccc55f36, type: 3}
   isDefaultItem: 0

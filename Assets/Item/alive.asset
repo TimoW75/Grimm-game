@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: alive
   m_EditorClassIdentifier: 
   itemName: alive
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 8fa751475ca7de2458a03305a28d3fdb, type: 3}
   isDefaultItem: 0

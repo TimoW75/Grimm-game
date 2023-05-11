@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: morning
   m_EditorClassIdentifier: 
   itemName: morning
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 5e3662a24755cbf40874de0d3b140290, type: 3}
   isDefaultItem: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: a Werewolf
   m_EditorClassIdentifier: 
   itemName: a Werewolf
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 10c413e8c0ffb804183cc5f19b235c12, type: 3}
   isDefaultItem: 0

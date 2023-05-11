@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeaveHouse : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPointOutsideHouse;
-
+    [SerializeField] private float outDoorTime = 0.5f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(exitHouse(collision.gameObject));
@@ -13,7 +13,7 @@ public class LeaveHouse : MonoBehaviour
 
     private IEnumerator exitHouse(GameObject collision)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(outDoorTime);
         collision.gameObject.transform.position = spawnPointOutsideHouse.transform.position;
 
     }

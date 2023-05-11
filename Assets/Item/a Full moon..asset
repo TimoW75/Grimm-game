@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: a Full moon.
   m_EditorClassIdentifier: 
   itemName: a Full moon.
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: c73e00e58d6fea948a3700104f0052f0, type: 3}
   isDefaultItem: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sheepwool
   m_EditorClassIdentifier: 
   itemName: Sheepwool
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: adbbf41ff5825c74abb117d370679487, type: 3}
   isDefaultItem: 0
