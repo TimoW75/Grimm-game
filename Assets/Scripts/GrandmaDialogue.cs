@@ -6,7 +6,7 @@ public class GrandmaDialogue : MonoBehaviour
 {
     [SerializeField] private string[] lines;
     [SerializeField] private Sprite npcIcon;
-    [SerializeField] private string NPCname;
+    [SerializeField] private string GrandmaName;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textComponent;
 
@@ -53,9 +53,11 @@ public class GrandmaDialogue : MonoBehaviour
     void StartDialgue()
     {
         npcImageObject.sprite = npcIcon;
-        npcName.text = NPCname;
+        print(npcName.text);
+        npcName.text = GrandmaName;
+        print(npcName.text);
         index = 0;
-        textComponent.text = lines[index];
+        textComponent.text = lines[index];  
 
         NextLine();
     }

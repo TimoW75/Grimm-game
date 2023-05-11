@@ -156,7 +156,6 @@ public class ChoiceNPC : MonoBehaviour
     {
         choicePanel.SetActive(false);
         inventory.SetActive(false);
-        checkFilledFields();
         DestroyImageChildrenWithTag();
 
         if (collision.CompareTag("Player"))
@@ -177,7 +176,8 @@ public class ChoiceNPC : MonoBehaviour
                 
             }
         }
-        inventoryM.ListItems();
+        inventoryManage.ListItems();
+
     }
 
 
@@ -210,6 +210,7 @@ public class ChoiceNPC : MonoBehaviour
         }
         if (numberCorrect == 4)
         {
+            print(numberCorrect);
             gameManager.dayNumber++;
             DayNight.cycleLight();
             player.transform.position = startPosHouse.transform.position;
