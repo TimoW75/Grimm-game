@@ -2,17 +2,21 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.LowLevel;
 
-public class AxePickup : MonoBehaviour {
+public class AxePickup : MonoBehaviour
+{
     public Vector3 axeHeldPosition = new Vector3(0.5f, -0.5f, 0f);
     public Vector3 axeHeldRotation = new Vector3(0f, 0f, -45f);
     public float swingDuration = 0.2f;
     public float swingAngle = 30f;
-    public int maxHits = 3;
+    private int maxHits = 3;
     private int currentHits = 0;
+    private GameObject previousTarget = null;
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         PlayerChopping playerChopping = other.GetComponent<PlayerChopping>();
-        if (playerChopping != null) {
+        if (playerChopping != null)
+        {
             playerChopping.canChop = true;
 
             // Make the axe a child of the player and set its relative position and rotation
@@ -25,24 +29,30 @@ public class AxePickup : MonoBehaviour {
         }
     }
 
-    public void SwingAxe() {
+    public void SwingAxe()
+    {
         StartCoroutine(AxeSwingAnimation());
     }
 
-    private IEnumerator AxeSwingAnimation() {
+    private IEnumerator AxeSwingAnimation()
+    {
         float elapsedTime = 0f;
 
         Quaternion startRotation = transform.localRotation;
         Quaternion midRotation = Quaternion.Euler(new Vector3(0f, 0f, swingAngle));
         Quaternion endRotation = startRotation;
 
-        while (elapsedTime < swingDuration) {
+        while (elapsedTime < swingDuration)
+        {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / swingDuration;
 
-            if (t < 0.5f) {
+            if (t < 0.5f)
+            {
                 transform.localRotation = Quaternion.Lerp(startRotation, midRotation, t * 2f);
-            } else {
+            }
+            else
+            {
                 transform.localRotation = Quaternion.Lerp(midRotation, endRotation, (t - 0.5f) * 2f);
             }
 
@@ -52,19 +62,30 @@ public class AxePickup : MonoBehaviour {
         transform.localRotation = endRotation;
     }
 
-    public void AxeHit() {
-        currentHits++;
-        if (currentHits >= maxHits) {
-            if (gameObject != null) {
+    public void AxeHit(GameObject target)
+    {
+        if (target == previousTarget)
+        {
+            currentHits++;
+            if (currentHits >= maxHits)
+            {
                 Destroy(gameObject);
             }
         }
+        else
+        {
+            currentHits = 1;
+            previousTarget = target;
+        }
     }
 
-    private void OnDestroy() {
-        if (transform.parent != null) {
+    private void OnDestroy()
+    {
+        if (transform.parent != null)
+        {
             PlayerChopping playerChopping = transform.parent.GetComponent<PlayerChopping>();
-            if (playerChopping != null) {
+            if (playerChopping != null)
+            {
                 playerChopping.canChop = false;
             }
         }

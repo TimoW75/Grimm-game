@@ -8,8 +8,6 @@ public class TreeChopping : MonoBehaviour {
     public GameObject itemPrefab;
     public Sprite choppedTreeSprite;
     public float dropDistance = 1.5f;
-    public float offsetX = 0f;
-    public float offsetY = 0f;
     public float yOffset = 0.5f;
     private SpriteRenderer sr;
 
@@ -24,11 +22,13 @@ public class TreeChopping : MonoBehaviour {
             sr.sprite = choppedTreeSprite;
             // You can set a flag to make the tree unable to be chopped further
 
-            // Adjust the sprite location of the chopped tree
-            sr.transform.localPosition = new Vector3(offsetX, offsetY, sr.transform.localPosition.z);
+            // Get the position of the game object
+            Vector3 objectPosition = transform.position;
+
+            // Set the sprite's position to match the game object's position
+            sr.transform.position = new Vector3(objectPosition.x, objectPosition.y, sr.transform.position.z);
             DropItem();
         }
-
     }
 
     private void DropItem() {
