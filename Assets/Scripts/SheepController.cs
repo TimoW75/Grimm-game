@@ -163,7 +163,6 @@ public class SheepController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null && gameManager.currentQuest == "Shepherd")
         {
-            Debug.Log("Schaap gevangen");
             Destroy(gameObject);
             InventoryManager.Instance.AddItem(sheepItem);
         }
