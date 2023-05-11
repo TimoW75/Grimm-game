@@ -150,7 +150,7 @@ public class Dialogue : MonoBehaviour
             }
             else if (questCompeleted && questActive)
             {
-                textComponent.text = "I already told you what you wanted to know";
+                NextLine();
             }
         }
         else
@@ -171,9 +171,18 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = string.Empty;
                 textComponent.text = lines[index];
             }
-            else if (questCompeleted && questActive && itemReceived)
+            else if (questCompeleted && questActive)
             {
-                zeroText();
+                if (index < HasQuestItemText.Length - 1)
+                {
+                    index++;
+                    textComponent.text = string.Empty;
+                    textComponent.text = HasQuestItemText[index];
+                }
+                else
+                {
+                    zeroText();
+                }
             }
             else if (!questActive && !questCompeleted)
             {
