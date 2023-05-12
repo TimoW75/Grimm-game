@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Wood
   itemIcon: {fileID: 21300000, guid: d581d50c163b94c489dc8545f0c9b746, type: 3}
   isDefaultItem: 0
+  PickedUpFromGround: 1

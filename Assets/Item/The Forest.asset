@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: The Forest
   itemIcon: {fileID: 21300000, guid: c160091b9d9e7d04aa78722b180c8181, type: 3}
   isDefaultItem: 0
+  PickedUpFromGround: 1

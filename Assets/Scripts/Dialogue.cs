@@ -114,6 +114,7 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         index = 0;
+        npcName.text = string.Empty;
         dialoguePanel.SetActive(false);
         if (SubmitQuestItemSlot != null)
         {
@@ -271,6 +272,10 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
+                for (int i = 0; i < givenQuestItem.Length; i++)
+                {
+                    InventoryManager.Instance.AddItem(givenQuestItem[i]);
+                }
                 zeroText();
             }
         }

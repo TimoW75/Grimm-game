@@ -48,12 +48,15 @@ public class GrandmaDialogue : MonoBehaviour
         textComponent.text = string.Empty;
         index = 0;
         dialoguePanel.SetActive(false);
+        npcName.text = string.Empty;
     }
 
     void StartDialgue()
     {
         npcImageObject.sprite = npcIcon;
         npcName.text = GrandmaName;
+        print(npcName);
+        print(npcName.text);
         index = 0;
         textComponent.text = lines[index];  
 

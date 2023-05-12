@@ -1,5 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
@@ -11,6 +12,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private Transform inventoryObject;
     [SerializeField] private GameObject itemInventory;
+    [SerializeField] private TextMeshProUGUI pickupBox;
+    [SerializeField] private GameObject inventory;
     private void Awake()
     {
         if (Instance != null)
@@ -26,6 +29,11 @@ public class InventoryManager : MonoBehaviour
         if (!item.isDefaultItem)
         {
             items.Add(item);
+            if(item.PickedUpFromGround)
+            {
+                inventory.SetActive(true);
+                StartCoroutine(pickupNotifier(item.name));
+            }
         }
     }
     public void removeItem(Item item)
@@ -54,6 +62,12 @@ public class InventoryManager : MonoBehaviour
             obj.name = item.itemName;
 
         }
+    }
+    private IEnumerator pickupNotifier(string itemName)
+    {
+        pickupBox.text = "Picked up +1 "+ itemName;
+        yield return new WaitForSeconds(2f);
+        pickupBox.text = "";
     }
 
 }

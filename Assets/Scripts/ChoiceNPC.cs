@@ -186,6 +186,7 @@ public class ChoiceNPC : MonoBehaviour
     {
         textComponent.text = string.Empty;
         index = 0;
+        npcName.text = string.Empty;
         dialoguePanel.SetActive(false);
         if (SubmitQuestItemSlot != null)
         {
@@ -198,6 +199,7 @@ public class ChoiceNPC : MonoBehaviour
     }
     void checkFilledFields()
     {
+        numberCorrect = 0;
         for (int i = 0; i < Field.Length; i++)
         {   
             if (Field[i].gameObject.transform.childCount != 0)
@@ -208,9 +210,9 @@ public class ChoiceNPC : MonoBehaviour
                 }
             }
         }
+        print(numberCorrect);
         if (numberCorrect == 4)
         {
-            print(numberCorrect);
             gameManager.dayNumber++;
             DayNight.cycleLight();
             player.transform.position = startPosHouse.transform.position;
