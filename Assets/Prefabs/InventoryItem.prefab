@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 3349750066775249123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8485, y: 1.8485, z: 1.8485}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3276083576085787519}
@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentAfterDrag: {fileID: 0}
-  axePickup: {fileID: 4039179104285778292, guid: be65ae3416d76fd45a372c69dfb948ce, type: 3}
 --- !u!1 &4719884149413793007
 GameObject:
   m_ObjectHideFlags: 0
