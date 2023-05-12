@@ -26,7 +26,7 @@ public class getClueFromGroundObject : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (canPickUp && !givenItem)
+        if (canPickUp)
         {
             givenItem = true;
             for (int i = 0; i < clueItem.Length; i++)
