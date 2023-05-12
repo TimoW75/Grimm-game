@@ -47,7 +47,6 @@ public class ChoiceNPC : MonoBehaviour
     public gameManager gameManager;
     public InventoryManager inventoryManage;
 
-    public DayNightCycle DayNight;
     public CutsceneController CutsceneController;
     private int numberCorrect = 0;
     [SerializeField] private GameObject startPosHouse;
@@ -214,21 +213,17 @@ public class ChoiceNPC : MonoBehaviour
         if (numberCorrect == 4)
         {
             gameManager.dayNumber++;
-            DayNight.cycleLight();
             player.transform.position = startPosHouse.transform.position;
         }
         else if (numberCorrect == 7)
         {
             gameManager.dayNumber++;
-            DayNight.cycleLight();
             CutsceneController.PlayCutscene(1);
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
         {
             gameManager.dayNumber++;
-            DayNight.cycleLight();
-            player.transform.position = startPosHouse.transform.position;
             CutsceneController.PlayCutscene(2);
 
         }
