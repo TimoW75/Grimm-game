@@ -42,7 +42,7 @@ public class gameManager : MonoBehaviour
         if (numberOfQuestsCompleted == 2 || numberOfQuestsCompleted == 4 || numberOfQuestsCompleted == 6)
         {
             QuestActiveTextBox.SetActive(true);
-            questText.text = "You have completed all the quests for today, go visit grandma";
+            questText.text = "You have completed all the quests for today, go visit the village elder";
         }
     }
 

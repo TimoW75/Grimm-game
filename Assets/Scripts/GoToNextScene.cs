@@ -7,7 +7,6 @@ public class GoToNextScene : MonoBehaviour
 {
     public void startGame()
     {
-        print("aaaaaaa");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
