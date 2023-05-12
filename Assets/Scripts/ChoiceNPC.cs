@@ -227,7 +227,8 @@ public class ChoiceNPC : MonoBehaviour
             gameManager.dayNumber++;
             DayNight.cycleLight();
             player.transform.position = startPosHouse.transform.position;
-            
+            CutsceneController.PlayCutscene(2);
+
         }
     }
 
@@ -368,6 +369,7 @@ public class ChoiceNPC : MonoBehaviour
                             gameManager.questActiveGeneral = false;
                             gameManager.currentQuest = string.Empty;
                             gameManager.setTextHiden();
+                            gameManager.questCompleted();
 
                             for (int i = inventoryManage.items.Count - 1; i >= 0; i--)
                             {

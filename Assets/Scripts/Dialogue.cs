@@ -48,8 +48,24 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F) && playerIsClose && !gameManager.questActiveGeneral)
+        {
+            if (dialoguePanel.activeInHierarchy)
+            {
+                zeroText();
+            }
+            else
+            {
+                dialoguePanel.SetActive(true);
+                StartDialgue();
 
-        if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
+            }
+        }else if(Input.GetKeyDown(KeyCode.F) && playerIsClose && gameManager.questActiveGeneral && !questActive)
+        {
+            dialoguePanel.SetActive(true);
+            textComponent.text = "you are already doing a quest for the " + gameManager.currentQuest;
+        }
+        else if (Input.GetKeyDown(KeyCode.F) && playerIsClose && gameManager.questActiveGeneral && questActive)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -62,14 +78,14 @@ public class Dialogue : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive )
+        if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && !gameManager.questActiveGeneral)
         {
             if (dialoguePanel.activeInHierarchy)
             {
                 NextLine();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive)
+        else if (Input.GetKeyDown(KeyCode.Return) && playerIsClose && !questActive && !gameManager.questActiveGeneral)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -121,7 +137,7 @@ public class Dialogue : MonoBehaviour
             {
                 textComponent.text = questActiveText;
             }
-            else if (!questActive && !questCompeleted && !gameManager.questActiveGeneral)
+            else if (!questActive && !questCompeleted)
             {
                 textComponent.text = lines[index];
 
@@ -221,6 +237,7 @@ public class Dialogue : MonoBehaviour
                             gameManager.questActiveGeneral = false;
                             gameManager.currentQuest = string.Empty;
                             gameManager.setTextHiden();
+                            gameManager.questCompleted();
 
                             for (int i = inventoryManage.items.Count - 1; i >= 0; i--)
                             {
@@ -254,9 +271,7 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                
                 zeroText();
-                
             }
         }
         else if (QuestActiveOnDay != gameManager.dayNumber)
