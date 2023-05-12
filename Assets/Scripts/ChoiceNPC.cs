@@ -212,13 +212,13 @@ public class ChoiceNPC : MonoBehaviour
         print(numberCorrect);
         if (numberCorrect == 4)
         {
+            CutsceneController.PlayCutscene(1);
             gameManager.dayNumber++;
             player.transform.position = startPosHouse.transform.position;
         }
         else if (numberCorrect == 7)
         {
             gameManager.dayNumber++;
-            CutsceneController.PlayCutscene(1);
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
