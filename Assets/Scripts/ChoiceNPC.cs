@@ -232,7 +232,7 @@ void checkFilledFields()
     {
         gameManager.dayNumber++;
         CutsceneController.PlayCutscene(2);
-        StartCoroutine(DelayedGoToNextScene(10.0f));
+        StartCoroutine(DelayedGoToNextScene(48.0f));
     }
 }
 
@@ -240,13 +240,13 @@ IEnumerator DelayedGoToNextScene(float delay)
 {
     yield return new WaitForSeconds(delay);
 
-    // Go to the next scene here
+    
     GoToNextScene();
 }
 
 void GoToNextScene()
 {
-    // Code to go to the next scene
+   
     SceneManager.LoadScene("Ending");
 }
 
