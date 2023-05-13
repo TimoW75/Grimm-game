@@ -46,8 +46,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private int QuestActiveOnDay;
     public gameManager gameManager;
     public InventoryManager inventoryManage;
-
-    public DayNightCycle DayNight;
+    public ImageFader imageFading;
     public CutsceneController CutsceneController;
     private int numberCorrect = 0;
     [SerializeField] private GameObject startPosHouse;
@@ -186,6 +185,7 @@ public class ChoiceNPC : MonoBehaviour
     {
         textComponent.text = string.Empty;
         index = 0;
+        npcName.text = string.Empty;
         dialoguePanel.SetActive(false);
         if (SubmitQuestItemSlot != null)
         {
@@ -198,6 +198,7 @@ public class ChoiceNPC : MonoBehaviour
     }
     void checkFilledFields()
     {
+        numberCorrect = 0;
         for (int i = 0; i < Field.Length; i++)
         {   
             if (Field[i].gameObject.transform.childCount != 0)
@@ -208,26 +209,27 @@ public class ChoiceNPC : MonoBehaviour
                 }
             }
         }
+        print(numberCorrect);
         if (numberCorrect == 4)
         {
-            print(numberCorrect);
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
+            CutsceneController.PlayCutscene(1);
+            gameManager.newDay();
+            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if (numberCorrect == 7)
         {
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
-            CutsceneController.PlayCutscene(1);
+            gameManager.newDay();
+            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
         {
-            gameManager.dayNumber++;
-            DayNight.cycleLight();
-            player.transform.position = startPosHouse.transform.position;
-            
+            imageFading.startFade();
+            gameManager.newDay();
+            CutsceneController.PlayCutscene(2);
+
+
         }
     }
 
@@ -368,6 +370,7 @@ public class ChoiceNPC : MonoBehaviour
                             gameManager.questActiveGeneral = false;
                             gameManager.currentQuest = string.Empty;
                             gameManager.setTextHiden();
+                            gameManager.questCompleted();
 
                             for (int i = inventoryManage.items.Count - 1; i >= 0; i--)
                             {

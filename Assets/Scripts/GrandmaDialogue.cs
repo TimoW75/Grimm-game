@@ -9,7 +9,6 @@ public class GrandmaDialogue : MonoBehaviour
     [SerializeField] private string GrandmaName;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textComponent;
-
     [SerializeField] private Image npcImageObject;
     [SerializeField] private TextMeshProUGUI npcName;
     private int index;
@@ -48,13 +47,14 @@ public class GrandmaDialogue : MonoBehaviour
         textComponent.text = string.Empty;
         index = 0;
         dialoguePanel.SetActive(false);
+        npcName.text = string.Empty;
     }
 
     void StartDialgue()
     {
         npcImageObject.sprite = npcIcon;
-        print(npcName.text);
         npcName.text = GrandmaName;
+        print(npcName);
         print(npcName.text);
         index = 0;
         textComponent.text = lines[index];  

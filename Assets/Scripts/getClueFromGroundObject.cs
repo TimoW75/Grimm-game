@@ -4,7 +4,7 @@ public class getClueFromGroundObject : MonoBehaviour
 {
 
     [SerializeField] private Item[] clueItem;
-    public InventoryManager inventoryManage;
+    public InventoryManager inventoryManager;
     private bool givenItem = false;
     [SerializeField] private bool canPickUp;
     [SerializeField] private bool destroyAfter;
@@ -15,9 +15,9 @@ public class getClueFromGroundObject : MonoBehaviour
             givenItem = true;
             for (int i = 0; i < clueItem.Length; i++)
             {
-                InventoryManager.Instance.AddItem(clueItem[i]);
+                inventoryManager.AddItem(clueItem[i]);
             }
-            inventoryManage.ListItems();
+            inventoryManager.ListItems();
             if (destroyAfter)
             {
                 Destroy(gameObject);
@@ -31,9 +31,9 @@ public class getClueFromGroundObject : MonoBehaviour
             givenItem = true;
             for (int i = 0; i < clueItem.Length; i++)
             {
-                InventoryManager.Instance.AddItem(clueItem[i]);
+                inventoryManager.AddItem(clueItem[i]);
             }
-            inventoryManage.ListItems();
+            inventoryManager.ListItems();
             if (destroyAfter)
             {
                 Destroy(gameObject);

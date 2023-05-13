@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Sheep
   itemIcon: {fileID: 21300000, guid: 94f9426cc5622ce4e91f5e2667b2937f, type: 3}
   isDefaultItem: 0
+  PickedUpFromGround: 1
