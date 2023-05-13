@@ -231,6 +231,7 @@ void checkFilledFields()
     else if (numberCorrect == 10)
     {
         gameManager.dayNumber++;
+        CutsceneController.PlayCutscene(2);
         StartCoroutine(DelayedGoToNextScene(10.0f));
     }
 }
