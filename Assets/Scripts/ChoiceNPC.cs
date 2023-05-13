@@ -10,8 +10,6 @@ using System.Collections;
 
 public class ChoiceNPC : MonoBehaviour
 {
-    
-
     [SerializeField] private GameObject choicePanel;
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] Field;
@@ -31,6 +29,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private string questActiveText = "You are already doing my quest!";
     [SerializeField] private string[] HasQuestItemText;
+    [SerializeField] private string QuestActiveBoxText;
 
     [SerializeField] private float textSpeed;
 
@@ -52,7 +51,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private int QuestActiveOnDay;
     public gameManager gameManager;
     public InventoryManager inventoryManage;
-
+    public ImageFader imageFading;
     public CutsceneController CutsceneController;
     private int numberCorrect = 0;
     [SerializeField] private GameObject startPosHouse;
@@ -202,40 +201,39 @@ public class ChoiceNPC : MonoBehaviour
             inventory.SetActive(false);
         }
     }
-   
-void checkFilledFields()
-{
-    numberCorrect = 0;
-    for (int i = 0; i < Field.Length; i++)
-    {   
-        if (Field[i].gameObject.transform.childCount != 0)
-        {
-            if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
+    void checkFilledFields()
+    {
+        numberCorrect = 0;
+        for (int i = 0; i < Field.Length; i++)
+        {   
+            if (Field[i].gameObject.transform.childCount != 0)
             {
-                numberCorrect++;
+                if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
+                {
+                    numberCorrect++;
+                }
             }
         }
-    }
-    print(numberCorrect);
-    if (numberCorrect == 4)
-    {
-        CutsceneController.PlayCutscene(1);
-        gameManager.dayNumber++;
-        player.transform.position = startPosHouse.transform.position;
-    }
-    else if (numberCorrect == 7)
-    {
-        gameManager.dayNumber++;
-        player.transform.position = startPosHouse.transform.position;
-    }
-    else if (numberCorrect == 10)
-    {
-        gameManager.dayNumber++;
-        CutsceneController.PlayCutscene(2);
-        StartCoroutine(DelayedGoToNextScene(48.0f));
-    }
-}
+        print(numberCorrect);
+        if (numberCorrect == 4)
+        {
+            CutsceneController.PlayCutscene(1);
+            gameManager.newDay();
+            player.transform.position = startPosHouse.transform.position;
+        }
+        else if (numberCorrect == 7)
+        {
+            gameManager.newDay();
+            player.transform.position = startPosHouse.transform.position;
+        }
+        else if(numberCorrect == 10)
+        {
+            gameManager.newDay();
+            CutsceneController.PlayCutscene(2);
+StartCoroutine(DelayedGoToNextScene(48.0f));
 
+        }
+    }
 IEnumerator DelayedGoToNextScene(float delay)
 {
     yield return new WaitForSeconds(delay);
@@ -361,7 +359,7 @@ void GoToNextScene()
             {
                 questActive = true;
                 gameManager.questActiveGeneral = true;
-                gameManager.currentQuest = gameObject.name;
+                gameManager.currentQuest = QuestActiveBoxText;
                 gameManager.setTextActive();
                 zeroText();
             }
@@ -381,8 +379,8 @@ void GoToNextScene()
                         {
                             for (int i = 0; i < givenQuestItem.Length; i++)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem[i]);
-                            }
+                                inventoryManage.AddItem(givenQuestItem[i]);
+                            }   
                             itemReceived = true;
                             questCompeleted = true;
                             gameManager.questActiveGeneral = false;
@@ -433,3 +431,4 @@ void GoToNextScene()
         }
     }
 }
+
