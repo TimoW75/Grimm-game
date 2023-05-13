@@ -9,7 +9,6 @@ public class GrandmaDialogue : MonoBehaviour
     [SerializeField] private string GrandmaName;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textComponent;
-
     [SerializeField] private Image npcImageObject;
     [SerializeField] private TextMeshProUGUI npcName;
     private int index;

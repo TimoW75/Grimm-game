@@ -46,7 +46,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private int QuestActiveOnDay;
     public gameManager gameManager;
     public InventoryManager inventoryManage;
-
+    public ImageFader imageFading;
     public CutsceneController CutsceneController;
     private int numberCorrect = 0;
     [SerializeField] private GameObject startPosHouse;
@@ -213,18 +213,22 @@ public class ChoiceNPC : MonoBehaviour
         if (numberCorrect == 4)
         {
             CutsceneController.PlayCutscene(1);
-            gameManager.dayNumber++;
+            gameManager.newDay();
+            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if (numberCorrect == 7)
         {
-            gameManager.dayNumber++;
+            gameManager.newDay();
+            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
         {
-            gameManager.dayNumber++;
+            imageFading.startFade();
+            gameManager.newDay();
             CutsceneController.PlayCutscene(2);
+
 
         }
     }
