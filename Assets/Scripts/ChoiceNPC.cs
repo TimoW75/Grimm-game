@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using UnityEngine.LowLevel;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
+
 
 public class ChoiceNPC : MonoBehaviour
 {
@@ -226,8 +230,24 @@ public class ChoiceNPC : MonoBehaviour
         {
             gameManager.newDay();
             CutsceneController.PlayCutscene(2);
+StartCoroutine(DelayedGoToNextScene(48.0f));
+
         }
     }
+IEnumerator DelayedGoToNextScene(float delay)
+{
+    yield return new WaitForSeconds(delay);
+
+    
+    GoToNextScene();
+}
+
+void GoToNextScene()
+{
+   
+    SceneManager.LoadScene("Ending");
+}
+
 
     private void disableEnableFields()
     {
@@ -411,3 +431,4 @@ public class ChoiceNPC : MonoBehaviour
         }
     }
 }
+
