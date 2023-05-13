@@ -3,9 +3,15 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using UnityEngine.LowLevel;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
+
 
 public class ChoiceNPC : MonoBehaviour
 {
+    
+
     [SerializeField] private GameObject choicePanel;
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject[] Field;
@@ -196,38 +202,53 @@ public class ChoiceNPC : MonoBehaviour
             inventory.SetActive(false);
         }
     }
-    void checkFilledFields()
-    {
-        numberCorrect = 0;
-        for (int i = 0; i < Field.Length; i++)
-        {   
-            if (Field[i].gameObject.transform.childCount != 0)
+   
+void checkFilledFields()
+{
+    numberCorrect = 0;
+    for (int i = 0; i < Field.Length; i++)
+    {   
+        if (Field[i].gameObject.transform.childCount != 0)
+        {
+            if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
             {
-                if (Field[i].gameObject.transform.GetChild(0).name == rightWords[i])
-                {
-                    numberCorrect++;
-                }
+                numberCorrect++;
             }
         }
-        print(numberCorrect);
-        if (numberCorrect == 4)
-        {
-            CutsceneController.PlayCutscene(1);
-            gameManager.dayNumber++;
-            player.transform.position = startPosHouse.transform.position;
-        }
-        else if (numberCorrect == 7)
-        {
-            gameManager.dayNumber++;
-            player.transform.position = startPosHouse.transform.position;
-        }
-        else if(numberCorrect == 10)
-        {
-            gameManager.dayNumber++;
-            CutsceneController.PlayCutscene(2);
-
-        }
     }
+    print(numberCorrect);
+    if (numberCorrect == 4)
+    {
+        CutsceneController.PlayCutscene(1);
+        gameManager.dayNumber++;
+        player.transform.position = startPosHouse.transform.position;
+    }
+    else if (numberCorrect == 7)
+    {
+        gameManager.dayNumber++;
+        player.transform.position = startPosHouse.transform.position;
+    }
+    else if (numberCorrect == 10)
+    {
+        gameManager.dayNumber++;
+        StartCoroutine(DelayedGoToNextScene(10.0f));
+    }
+}
+
+IEnumerator DelayedGoToNextScene(float delay)
+{
+    yield return new WaitForSeconds(delay);
+
+    // Go to the next scene here
+    GoToNextScene();
+}
+
+void GoToNextScene()
+{
+    // Code to go to the next scene
+    SceneManager.LoadScene("Ending");
+}
+
 
     private void disableEnableFields()
     {
