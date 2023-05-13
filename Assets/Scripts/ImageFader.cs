@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ImageFader : MonoBehaviour
 {
     public Image image; // Reference to the black image
-
+    [SerializeField] private GameObject imageObject;
     public float fadeDuration = 1f; 
     public float waitDuration = 1f; 
 
@@ -16,9 +16,11 @@ public class ImageFader : MonoBehaviour
         Color imageColor = image.material.color;
         imageColor.a = 0f;
         image.material.color = imageColor;
+        imageObject.SetActive(false);
     }
     public void startFade()
     {
+        imageObject.SetActive(true);
         fadeCoroutine = StartCoroutine(StartFade());
     }
 
@@ -45,6 +47,8 @@ public class ImageFader : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        imageObject.SetActive(false);
+
     }
 
     // Call this method to stop the fading process
@@ -53,6 +57,7 @@ public class ImageFader : MonoBehaviour
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
+            imageObject.SetActive(false);
         }
     }
 }
