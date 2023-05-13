@@ -25,6 +25,7 @@ public class ChoiceNPC : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private string questActiveText = "You are already doing my quest!";
     [SerializeField] private string[] HasQuestItemText;
+    [SerializeField] private string QuestActiveBoxText;
 
     [SerializeField] private float textSpeed;
 
@@ -214,22 +215,17 @@ public class ChoiceNPC : MonoBehaviour
         {
             CutsceneController.PlayCutscene(1);
             gameManager.newDay();
-            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if (numberCorrect == 7)
         {
             gameManager.newDay();
-            imageFading.startFade();
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
         {
-            imageFading.startFade();
             gameManager.newDay();
             CutsceneController.PlayCutscene(2);
-
-
         }
     }
 
@@ -343,7 +339,7 @@ public class ChoiceNPC : MonoBehaviour
             {
                 questActive = true;
                 gameManager.questActiveGeneral = true;
-                gameManager.currentQuest = gameObject.name;
+                gameManager.currentQuest = QuestActiveBoxText;
                 gameManager.setTextActive();
                 zeroText();
             }

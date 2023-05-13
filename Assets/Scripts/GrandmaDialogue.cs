@@ -54,8 +54,6 @@ public class GrandmaDialogue : MonoBehaviour
     {
         npcImageObject.sprite = npcIcon;
         npcName.text = GrandmaName;
-        print(npcName);
-        print(npcName.text);
         index = 0;
         textComponent.text = lines[index];  
 

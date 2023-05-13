@@ -18,6 +18,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private string questActiveText;
     [SerializeField] private string[] HasQuestItemText;
+    [SerializeField] private string QuestActiveBoxText;
 
     private int index;
     private bool playerIsClose;
@@ -206,7 +207,7 @@ public class Dialogue : MonoBehaviour
             {
                 questActive = true;
                 gameManager.questActiveGeneral = true;
-                gameManager.currentQuest = gameObject.name;
+                gameManager.currentQuest = QuestActiveBoxText;
                 gameManager.setTextActive();
 
                 if (ItemNeededForQuest == "Axe" && playerChop != null)
