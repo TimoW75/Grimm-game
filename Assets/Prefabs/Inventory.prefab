@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -354,6 +354,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4651ea7bcc13c644a4e8a7401560c65, type: 2}
   inventoryObject: {fileID: 1754551836075629464}
   itemInventory: {fileID: 4719884149413793007, guid: 2c845a8da3519c1458d6312525e918f2, type: 3}
+  pickupBox: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &1754551836143444094
 GameObject:
   m_ObjectHideFlags: 0

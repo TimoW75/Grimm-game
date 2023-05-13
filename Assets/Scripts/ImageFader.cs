@@ -17,6 +17,7 @@ public class ImageFader : MonoBehaviour
         imageColor.a = 0f;
         image.material.color = imageColor;
         imageObject.SetActive(false);
+        startFade();   
     }
     public void startFade()
     {

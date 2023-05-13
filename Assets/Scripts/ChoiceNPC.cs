@@ -363,8 +363,8 @@ public class ChoiceNPC : MonoBehaviour
                         {
                             for (int i = 0; i < givenQuestItem.Length; i++)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem[i]);
-                            }
+                                inventoryManage.AddItem(givenQuestItem[i]);
+                            }   
                             itemReceived = true;
                             questCompeleted = true;
                             gameManager.questActiveGeneral = false;

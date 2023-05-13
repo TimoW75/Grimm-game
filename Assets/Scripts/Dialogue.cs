@@ -145,11 +145,7 @@ public class Dialogue : MonoBehaviour
             }
             else if (questActive && !questCompeleted)
             {
-                if (inventory != null && SubmitQuestItemSlot != null)
-                {
-                    inventory.SetActive(true);
-                    inventoryManage.ListItems();
-                }
+
                 if (SubmitQuestItemSlot != null)
                 {
                     SubmitQuestItemSlot.SetActive(true);
@@ -158,6 +154,11 @@ public class Dialogue : MonoBehaviour
                         GameObject.Destroy(SubmitQuestItemSlot.transform.GetChild(0).transform.GetChild(0).gameObject);
                     }
                     textComponent.text = HasQuestItemText[index];
+                }
+                if (inventory != null && SubmitQuestItemSlot != null)
+                {
+                    inventory.SetActive(true);
+                    inventoryManage.ListItems();
                 }
                 else
                 {
@@ -231,7 +232,7 @@ public class Dialogue : MonoBehaviour
                         {
                             for (int i = 0; i < givenQuestItem.Length; i++)
                             {
-                                InventoryManager.Instance.AddItem(givenQuestItem[i]);
+                                inventoryManage.AddItem(givenQuestItem[i]);
                             }
                             itemReceived = true;
                             questCompeleted = true;
@@ -274,8 +275,9 @@ public class Dialogue : MonoBehaviour
             {
                 for (int i = 0; i < givenQuestItem.Length; i++)
                 {
-                    InventoryManager.Instance.AddItem(givenQuestItem[i]);
-                }
+                    inventoryManage.AddItem(givenQuestItem[i]);
+                }               
+                inventoryManage.ListItems();               
                 zeroText();
             }
         }
