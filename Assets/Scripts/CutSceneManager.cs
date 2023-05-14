@@ -36,7 +36,7 @@ public class CutSceneManager : MonoBehaviour
             display.sprite = frames[currentFrame];
             if (currentFrame == frames.Length - 1 && lastImageTakesLonger)
             {
-                yield return new WaitForSeconds(frameDuration * 30);
+                yield return new WaitForSeconds(frameDuration * 15);
             }
             else
             {
