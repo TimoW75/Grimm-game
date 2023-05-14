@@ -416,8 +416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.0133, y: 0.0288}
-  m_SizeDelta: {x: 21.7341, y: 9.9979}
+  m_AnchoredPosition: {x: 0.0133, y: -0.026}
+  m_SizeDelta: {x: 21.7341, y: 10.1458}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &475503238
 GameObject:
@@ -429,9 +429,10 @@ GameObject:
   m_Component:
   - component: {fileID: 475503240}
   - component: {fileID: 475503239}
+  - component: {fileID: 475503241}
   m_Layer: 0
   m_Name: Backgroundmusicstartscreen
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,7 +449,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c221d8d24d0ed4ce7a39686d1dd23c19, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.379
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -547,6 +548,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &475503241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475503238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203c0312dccc5ac43813dc644bfd2124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077277704
 GameObject:
   m_ObjectHideFlags: 0

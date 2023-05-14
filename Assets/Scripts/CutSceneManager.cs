@@ -9,7 +9,7 @@ public class CutSceneManager : MonoBehaviour
     private int currentFrame = 0;
     public Image display;
     public AudioSource soundEffectCutScene;
-    public AudioSource BackgroundMusic;
+    [SerializeField] bool lastImageTakesLonger = false;
 
     public void StartCutscene(Sprite[] newFrames)
     {
@@ -24,18 +24,35 @@ public class CutSceneManager : MonoBehaviour
         if (soundEffectCutScene)
         {
             StartCoroutine(Fade(true, soundEffectCutScene, 3f, 0.4f));
-            BackgroundMusic.Pause();
+            GameObject BackgroundMusic = GameObject.FindGameObjectWithTag("Audio");
+            if(BackgroundMusic != null)
+            {
+                BackgroundMusic.GetComponent<AudioSource>().Pause();
+            }
+
         }
         while (currentFrame < frames.Length)
         {
             display.sprite = frames[currentFrame];
-            yield return new WaitForSeconds(frameDuration);
+            if (currentFrame == frames.Length - 1 && lastImageTakesLonger)
+            {
+                yield return new WaitForSeconds(frameDuration * 30);
+            }
+            else
+            {
+                yield return new WaitForSeconds(frameDuration);
+            }
             currentFrame++;
         }
         if (soundEffectCutScene)
         {
             soundEffectCutScene.Stop();
-            BackgroundMusic.Play();
+            GameObject BackgroundMusic = GameObject.FindGameObjectWithTag("Audio");
+            if (BackgroundMusic != null)
+            {
+                BackgroundMusic.GetComponent<AudioSource>().Play();
+            }
+
         }
         gameObject.SetActive(false);
     }
