@@ -107,7 +107,7 @@ MonoBehaviour:
   choppedTreeSprite: {fileID: 21300000, guid: 50b881a5e372e44549ddccc0ca7b2dd0, type: 3}
   dropDistance: 1
   yOffset: -14.2
-  chopSound: {fileID: 8300000, guid: 083c7d2e573ca4481a31a2e13ceeb221, type: 3}
+  chopSound: {fileID: 8300000, guid: 4081c0046b488405381c95cb0f83ad15, type: 3}
 --- !u!61 &3351982698685375743
 BoxCollider2D:
   m_ObjectHideFlags: 0
