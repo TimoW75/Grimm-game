@@ -33,7 +33,7 @@ public class gameManager : MonoBehaviour
     public void newDay()
     {
         dayNumber++;
-        QuestActiveTextBox.SetActive(true);
+        QuestActiveTextBox.SetActive(false);
     }
 
     public void questCompleted()

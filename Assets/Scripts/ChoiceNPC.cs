@@ -62,7 +62,8 @@ public class ChoiceNPC : MonoBehaviour
     }
     private void Update()
     {
-        if(gameManager.dayNumber == 3 && !questCompeleted)
+
+        if (gameManager.dayNumber == 3 && !questCompeleted)
         {
             if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
             {
@@ -220,17 +221,20 @@ public class ChoiceNPC : MonoBehaviour
             CutsceneController.PlayCutscene(1);
             gameManager.newDay();
             player.transform.position = startPosHouse.transform.position;
+            CutsceneController.PlayCutscene(4);
+
         }
         else if (numberCorrect == 7)
         {
             gameManager.newDay();
+            CutsceneController.PlayCutscene(3);
             player.transform.position = startPosHouse.transform.position;
         }
         else if(numberCorrect == 10)
         {
             gameManager.newDay();
             CutsceneController.PlayCutscene(2);
-StartCoroutine(DelayedGoToNextScene(47.0f));
+            StartCoroutine(DelayedGoToNextScene(47.0f));
 
         }
     }
