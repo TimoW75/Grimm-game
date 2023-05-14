@@ -18,10 +18,17 @@ public class PlayerMovementV2 : MonoBehaviour
     const string PLAYER_WALK_LEFT = "Player_Walk_Left_Outside";
     const string PLAYER_WALK_RIGHT = "Player_Walk_Right_Outside";
 
+    public AudioClip walkingSound; // Reference to the audio clip
+
+    private AudioSource audioSource; // New audio source variable
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // Initialize audio source
+
+        audioSource.clip = walkingSound; // Assign audio clip from the reference
     }
 
     void Update()
@@ -60,11 +67,21 @@ public class PlayerMovementV2 : MonoBehaviour
         {
             ChangeAnimationState(PLAYER_IDLE);
         }
+
+        if (moveDirection == Vector2.zero && audioSource.isPlaying) // Stop sound when player stops moving
+        {
+            audioSource.Stop();
+        }
     }
 
     private void move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
+        if (moveDirection != Vector2.zero && !audioSource.isPlaying) // Play sound when player is moving
+        {
+            audioSource.Play();
+        }
     }
 
     void ChangeAnimationState(string newState)
