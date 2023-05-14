@@ -161,7 +161,7 @@ public class SheepController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null && gameManager.currentQuest == "Shepherd")
+        if (collision.gameObject.CompareTag(playerTag) && gameObject.CompareTag("Olive") && sheepItem != null && gameManager.currentQuest == "The shepherd has asked you to find her sheep.")
         {
             Destroy(gameObject);
             InventoryManager.Instance.AddItem(sheepItem);
