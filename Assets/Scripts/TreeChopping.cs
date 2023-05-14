@@ -1,4 +1,4 @@
-using System.Collections;
+System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +9,13 @@ public class TreeChopping : MonoBehaviour {
     public Sprite choppedTreeSprite;
     public float dropDistance = 1.5f;
     public float yOffset = 0.5f;
+    public AudioClip chopSound; // Add the chop sound here
     private SpriteRenderer sr;
+   
 
     void Start() {
         sr = GetComponent<SpriteRenderer>();
+        
     }
 
     public void Chop() {
@@ -28,6 +31,7 @@ public class TreeChopping : MonoBehaviour {
             // Set the sprite's position to match the game object's position
             sr.transform.position = new Vector3(objectPosition.x, objectPosition.y, sr.transform.position.z);
             DropItem();
+
         }
     }
 
