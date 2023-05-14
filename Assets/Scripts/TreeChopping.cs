@@ -9,10 +9,14 @@ public class TreeChopping : MonoBehaviour {
     public Sprite choppedTreeSprite;
     public float dropDistance = 1.5f;
     public float yOffset = 0.5f;
+    public AudioClip chopSound; // Make this public so you can drag and drop the sound file in the editor
+    private AudioSource audioSource; // Audio Source for the sound effect
     private SpriteRenderer sr;
 
     void Start() {
         sr = GetComponent<SpriteRenderer>();
+        // Create an audio source at runtime
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Chop() {
@@ -20,14 +24,15 @@ public class TreeChopping : MonoBehaviour {
 
         if (currentHits >= requiredHits) {
             sr.sprite = choppedTreeSprite;
-            // You can set a flag to make the tree unable to be chopped further
 
-            // Get the position of the game object
             Vector3 objectPosition = transform.position;
 
-            // Set the sprite's position to match the game object's position
             sr.transform.position = new Vector3(objectPosition.x, objectPosition.y, sr.transform.position.z);
             DropItem();
+            // Play the sound
+            if (audioSource != null && chopSound != null) {
+                audioSource.PlayOneShot(chopSound);
+            }
         }
     }
 
@@ -36,7 +41,6 @@ public class TreeChopping : MonoBehaviour {
         Vector2 dropDirection = new Vector2(Mathf.Cos(randomAngle * Mathf.Deg2Rad), Mathf.Sin(randomAngle * Mathf.Deg2Rad));
         Vector2 dropPosition = (Vector2)transform.position + dropDirection * dropDistance;
 
-        // Adjust the drop position's Y value
         dropPosition.y -= yOffset;
 
         Instantiate(itemPrefab, dropPosition, Quaternion.identity);
