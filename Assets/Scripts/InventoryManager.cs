@@ -34,6 +34,7 @@ public class InventoryManager : MonoBehaviour
                 inventory.SetActive(true);
                 StartCoroutine(pickupNotifier(item.name));
             }
+            ListItems();
         }
     }
     public void removeItem(Item item)
