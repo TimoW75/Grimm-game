@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 using Unity.VisualScripting;
 
 public class Dialogue : MonoBehaviour
