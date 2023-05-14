@@ -62,11 +62,6 @@ public class ChoiceNPC : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            GoToNextScene();
-        }
-
         if (gameManager.dayNumber == 3 && !questCompeleted)
         {
             if (Input.GetKeyDown(KeyCode.F) && playerIsClose)
