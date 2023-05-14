@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7589354682671b54fb81132460b8b31d, type: 3}
   m_Name: The shepperd
   m_EditorClassIdentifier: 
-  itemName: The shepperd
-  itemIcon: {fileID: 21300000, guid: 0ed700949b36fe0489f8b28452a5cfa3, type: 3}
+  itemName: The shepherd
+  itemIcon: {fileID: 21300000, guid: 63762e179df94ab4d8e6a30084178f09, type: 3}
   isDefaultItem: 0
+  PickedUpFromGround: 0
