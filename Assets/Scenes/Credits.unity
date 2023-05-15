@@ -331,6 +331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
+  - {fileID: 21300000, guid: 2034002d38b99471d97416729635a0e6, type: 3}
+  - {fileID: 21300000, guid: e604ef3a72b2244f895ef1e59ac7b525, type: 3}
+  - {fileID: 21300000, guid: b0ed374c85ba3436b97abb8c6587356f, type: 3}
   - {fileID: 21300000, guid: 378843444337d4485811ffa5a2731185, type: 3}
   - {fileID: 21300000, guid: c0a7b4bdcedcd4aefa2b2f1b3c499f6f, type: 3}
   - {fileID: 21300000, guid: 0cbda919e4e7d4f4c8d8d1e0f6003df7, type: 3}
@@ -436,7 +439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.79, y: 0.0288}
+  m_AnchoredPosition: {x: -0.01, y: -0.03}
   m_SizeDelta: {x: 21.7341, y: 9.9979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1077277704
