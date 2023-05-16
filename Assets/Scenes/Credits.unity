@@ -335,9 +335,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e604ef3a72b2244f895ef1e59ac7b525, type: 3}
   - {fileID: 21300000, guid: b0ed374c85ba3436b97abb8c6587356f, type: 3}
   - {fileID: 21300000, guid: 378843444337d4485811ffa5a2731185, type: 3}
-  - {fileID: 21300000, guid: c0a7b4bdcedcd4aefa2b2f1b3c499f6f, type: 3}
+  - {fileID: 21300000, guid: b0fb397ae48a9074e8bcda934fe26b1b, type: 3}
   - {fileID: 21300000, guid: 0cbda919e4e7d4f4c8d8d1e0f6003df7, type: 3}
-  frameDuration: 5
+  frameDuration: 9
   display: {fileID: 120827366}
   soundEffectCutScene: {fileID: 0}
   lastImageTakesLonger: 0
