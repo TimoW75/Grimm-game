@@ -29,7 +29,6 @@ public Transform player;
         movement = -direction;
     }
 
- 
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -44,11 +43,4 @@ public Transform player;
             }
         }
     }
-
-//     void OnTriggerExit2D(Collider2D other){
-//          if (other.CompareTag("Player"))
-//         {
-//             rb.velocity = Vector2.zero;
-//         }
-//     }
 }

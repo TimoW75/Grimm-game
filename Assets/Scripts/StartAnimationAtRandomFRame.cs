@@ -12,9 +12,4 @@ public class StartAnimationAtRandomFRame : MonoBehaviour
         anim.Play(state.fullPathHash, 0, Random.Range(0f, 1f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

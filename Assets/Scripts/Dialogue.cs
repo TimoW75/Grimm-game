@@ -277,7 +277,10 @@ public class Dialogue : MonoBehaviour
                 {
                     inventoryManage.AddItem(givenQuestItem[i]);
                 }               
-                inventoryManage.ListItems();               
+                inventoryManage.ListItems();
+                gameManager.QuestActiveTextBox.SetActive(true);
+                gameManager.questText.text = "You have completed all the quests for today, go visit the village elder";
+
                 zeroText();
             }
         }
